@@ -18,7 +18,8 @@ export default defineConfig(({ mode }) => ({
         manualChunks: {
           'vendor-react': ['react', 'react-dom', 'react-router-dom'],
           'vendor-ui': ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-toast'],
-          'vendor-three': ['three', '@react-three/fiber', '@react-three/drei'],
+          'vendor-three': ['three'],
+          'vendor-react-three': ['@react-three/fiber', '@react-three/drei'],
           'vendor-spline': ['@splinetool/react-spline', '@splinetool/runtime'],
           'vendor-particles': ['@tsparticles/react', '@tsparticles/slim', '@tsparticles/engine'],
           'vendor-animation': ['framer-motion'],
@@ -67,7 +68,7 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
       'lodash.debounce': 'lodash-es/debounce'
     },
-    dedupe: ['three', 'react', 'react-dom']
+    dedupe: ['three', 'react', 'react-dom', '@react-three/fiber', '@react-three/drei']
   },
   ssr: {
     noExternal: ['@splinetool/react-spline', '@splinetool/runtime']
