@@ -23,12 +23,27 @@ export default defineConfig(({ mode }) => ({
           'vendor-particles': ['@tsparticles/react', '@tsparticles/slim', '@tsparticles/engine'],
           'vendor-animation': ['framer-motion'],
         },
+        assetFileNames: (assetInfo) => {
+          if (!assetInfo.name) return `assets/[name]-[hash][extname]`;
+          const info = assetInfo.name.split('.');
+          const extType = info[info.length - 1];
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
+            return `assets/images/[name]-[hash][extname]`;
+          }
+          if (/css/i.test(extType)) {
+            return `assets/css/[name]-[hash][extname]`;
+          }
+          return `assets/[name]-[hash][extname]`;
+        },
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].js'
       },
     },
     minify: 'esbuild',
     target: 'es2020',
     chunkSizeWarningLimit: 500,
     reportCompressedSize: false,
+    assetsInlineLimit: 0,
   },
   optimizeDeps: {
     include: [
