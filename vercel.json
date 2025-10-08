@@ -1,7 +1,7 @@
 {
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/((?!manifest\\.json|favicon\\.ico|bllog\\.png|assets/).*)",
       "destination": "/index.html"
     }
   ],
@@ -105,11 +105,19 @@
       "headers": [
         {
           "key": "Content-Type",
-          "value": "application/manifest+json"
+          "value": "application/manifest+json; charset=utf-8"
         },
         {
           "key": "Cache-Control",
           "value": "public, max-age=86400"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET, HEAD, OPTIONS"
         }
       ]
     }

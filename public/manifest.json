@@ -3,6 +3,7 @@
   "short_name": "BrandHub.ma",
   "description": "Leading branding agency in Morocco, Africa, Middle East & Europe. Expert brand identity design, digital marketing & creative solutions.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#11118b",
