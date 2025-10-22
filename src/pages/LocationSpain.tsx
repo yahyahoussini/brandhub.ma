@@ -40,7 +40,7 @@ const LocationSpain = () => {
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Button size="lg" className="gradient-accent" asChild>
-                  <a href="https://wa.me/212607076940?text=Hola%2C%20estoy%20interesado%20en%20sus%20servicios%20en%20Espa%C3%B1a.%20Les%20contacto%20desde%20su%20p%C3%A1gina%20de%20Espa%C3%B1a." target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/212703026422?text=Hola%2C%20estoy%20interesado%20en%20sus%20servicios%20en%20Espa%C3%B1a.%20Les%20contacto%20desde%20su%20p%C3%A1gina%20de%20Espa%C3%B1a." target="_blank" rel="noopener noreferrer">
                     Contáctanos en España
                   </a>
                 </Button>
@@ -260,8 +260,8 @@ const LocationSpain = () => {
                   <CardContent className="p-6 text-center">
                     <Phone className="w-8 h-8 text-primary mx-auto mb-3" />
                     <h3 className="font-bold mb-2">Teléfono</h3>
-                    <a href="tel:+212607076940" className="text-muted-foreground hover:text-primary">
-                      +212 607 076 940
+                    <a href="tel:+212703026422" className="text-muted-foreground hover:text-primary">
+                      +212 703 026 422
                     </a>
                   </CardContent>
                 </Card>
@@ -281,7 +281,7 @@ const LocationSpain = () => {
                     <MapPin className="w-8 h-8 text-primary mx-auto mb-3" />
                     <h3 className="font-bold mb-2">WhatsApp</h3>
                     <a 
-                      href="https://wa.me/212607076940?text=Hola%2C%20me%20gustar%C3%ADa%20hablar%20con%20ustedes%20sobre%20sus%20servicios%20en%20Espa%C3%B1a." 
+                      href="https://wa.me/212703026422?text=Hola%2C%20me%20gustar%C3%ADa%20hablar%20con%20ustedes%20sobre%20sus%20servicios%20en%20Espa%C3%B1a." 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-muted-foreground hover:text-primary"

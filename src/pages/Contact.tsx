@@ -55,7 +55,7 @@ const Contact = () => {
     
     // WhatsApp message formatting
     const whatsappMessage = `Bonjour, je suis ${formData.name}.%0A%0AEmail: ${formData.email}%0ATéléphone: ${formData.phone}%0A%0AMessage:%0A${formData.message}`;
-    const whatsappUrl = `https://wa.me/212607076940?text=${whatsappMessage}`;
+    const whatsappUrl = `https://wa.me/212703026422?text=${whatsappMessage}`;
     
     window.open(whatsappUrl, '_blank');
     
@@ -104,8 +104,8 @@ const Contact = () => {
                     <Phone className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="font-bold text-lg mb-2">Téléphone</h3>
-                  <a href="tel:+212607076940" className="text-primary hover:underline">
-                    +212 607 076 940
+                  <a href="tel:+212703026422" className="text-primary hover:underline">
+                    +212 703 026 422
                   </a>
                 </CardContent>
               </Card>

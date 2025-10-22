@@ -325,7 +325,7 @@ const ServiceDetail = () => {
                             variant={tier.tier_name === "standard" ? "default" : "outline"}
                             onClick={() => {
                               const message = `Bonjour, je suis intéressé(e) par le service "${service.title}" - Forfait ${tier.tier_name} (${tier.price.toLocaleString()} MAD). Pourriez-vous me donner plus d'informations ?`;
-                              window.open(`https://wa.me/212607076940?text=${encodeURIComponent(message)}`, '_blank');
+                              window.open(`https://wa.me/212703026422?text=${encodeURIComponent(message)}`, '_blank');
                             }}
                           >
                             Choisir {tier.tier_name}
@@ -341,7 +341,7 @@ const ServiceDetail = () => {
                         size="lg"
                         onClick={() => {
                           const message = `Bonjour, je suis intéressé(e) par le service "${service.title}" (${getCategoryName(category || '')}). Pourriez-vous me contacter pour discuter des détails ?`;
-                          window.open(`https://wa.me/212607076940?text=${encodeURIComponent(message)}`, '_blank');
+                          window.open(`https://wa.me/212703026422?text=${encodeURIComponent(message)}`, '_blank');
                         }}
                       >
                         WhatsApp
@@ -379,7 +379,7 @@ const ServiceDetail = () => {
                         size="lg"
                         onClick={() => {
                           const message = `Bonjour, je suis intéressé(e) par le service "${service.title}" (${getCategoryName(category || '')}). Pourriez-vous me contacter pour discuter des détails ?`;
-                          window.open(`https://wa.me/212607076940?text=${encodeURIComponent(message)}`, '_blank');
+                          window.open(`https://wa.me/212703026422?text=${encodeURIComponent(message)}`, '_blank');
                         }}
                       >
                         WhatsApp

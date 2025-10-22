@@ -101,7 +101,7 @@ const Navbar = () => {
               asChild
             >
               <a 
-                href="https://wa.me/212607076940?text=Bonjour%2C%20je%20souhaite%20obtenir%20un%20devis%20gratuit%20depuis%20le%20menu%20de%20navigation." 
+                href="https://wa.me/212703026422?text=Bonjour%2C%20je%20souhaite%20obtenir%20un%20devis%20gratuit%20depuis%20le%20menu%20de%20navigation." 
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Obtenir un devis gratuit via WhatsApp"
@@ -183,7 +183,7 @@ const Navbar = () => {
                 asChild
               >
                 <a 
-                  href="https://wa.me/212607076940?text=Bonjour%2C%20je%20souhaite%20obtenir%20un%20devis%20gratuit%20depuis%20le%20menu%20mobile." 
+                  href="https://wa.me/212703026422?text=Bonjour%2C%20je%20souhaite%20obtenir%20un%20devis%20gratuit%20depuis%20le%20menu%20mobile." 
                   target="_blank" 
                   rel="noopener noreferrer"
                   aria-label="Obtenir un devis gratuit via WhatsApp"

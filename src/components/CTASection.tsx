@@ -25,7 +25,7 @@ const CTASection = () => {
                 asChild
               >
                 <a 
-                  href="https://wa.me/212607076940?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20vos%20services.%20Je%20vous%20contacte%20depuis%20votre%20section%20d'appel%20%C3%A0%20l'action." 
+                  href="https://wa.me/212703026422?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20vos%20services.%20Je%20vous%20contacte%20depuis%20votre%20section%20d'appel%20%C3%A0%20l'action." 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center"
@@ -41,7 +41,7 @@ const CTASection = () => {
                 className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 px-8 py-6 text-lg transition-smooth"
                 asChild
               >
-                <a href="tel:+212607076940" className="flex items-center">
+                <a href="tel:+212703026422" className="flex items-center">
                   <Phone className="mr-2 w-5 h-5" />
                   Appelez-nous
                 </a>

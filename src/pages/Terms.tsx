@@ -158,8 +158,8 @@ const Terms = () => {
                   Pour toute question concernant ces Conditions d'Utilisation, veuillez nous contacter:
                 </p>
                 <div className="space-y-2 text-muted-foreground">
-                  <p>Téléphone: <a href="tel:+212607076940" className="text-primary hover:underline">+212 607 076 940</a></p>
-                  <p>WhatsApp: <a href="https://wa.me/212607076940" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">+212 607 076 940</a></p>
+                  <p>Téléphone: <a href="tel:+212703026422" className="text-primary hover:underline">+212 703 026 422</a></p>
+                  <p>WhatsApp: <a href="https://wa.me/212703026422" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">+212 703 026 422</a></p>
                 </div>
               </CardContent>
             </Card>

@@ -120,7 +120,7 @@ export default function CTAWithVerticalMarquee() {
             </p>
             <div className="flex flex-wrap gap-4 animate-fade-in-up [animation-delay:600ms]">
               <a 
-                href="https://wa.me/212607076940?text=Bonjour%2C%20je%20souhaite%20une%20consultation%20gratuite.%20Je%20vous%20contacte%20depuis%20la%20banni%C3%A8re%20promotionnelle." 
+                href="https://wa.me/212703026422?text=Bonjour%2C%20je%20souhaite%20une%20consultation%20gratuite.%20Je%20vous%20contacte%20depuis%20la%20banni%C3%A8re%20promotionnelle." 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="group relative px-6 py-3 bg-foreground text-background rounded-md font-medium overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg"

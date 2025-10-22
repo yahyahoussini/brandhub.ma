@@ -53,7 +53,7 @@ const Index = () => {
           badgeText="Technologie de Pointe"
           badgeLabel="Nouveau"
           ctaButtons={[
-            { text: "Consultation Gratuite", href: "https://wa.me/212607076940?text=Bonjour%2C%20je%20souhaite%20une%20consultation%20gratuite.%20Je%20vous%20contacte%20depuis%20la%20section%20technologique%20de%20votre%20site.", primary: true },
+            { text: "Consultation Gratuite", href: "https://wa.me/212703026422?text=Bonjour%2C%20je%20souhaite%20une%20consultation%20gratuite.%20Je%20vous%20contacte%20depuis%20la%20section%20technologique%20de%20votre%20site.", primary: true },
             { text: "Voir Nos Projets", href: "/services/programming" }
           ]}
           microDetails={["Innovation constante", "Expertise confirmée", "Résultats garantis"]}

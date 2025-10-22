@@ -40,7 +40,7 @@ const LocationMorocco = () => {
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Button size="lg" className="gradient-accent" asChild>
-                  <a href="https://wa.me/212607076940?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20vos%20services%20au%20Maroc.%20Je%20vous%20contacte%20depuis%20votre%20page%20Maroc." target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/212703026422?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20vos%20services%20au%20Maroc.%20Je%20vous%20contacte%20depuis%20votre%20page%20Maroc." target="_blank" rel="noopener noreferrer">
                     Contactez-nous au Maroc
                   </a>
                 </Button>
@@ -260,8 +260,8 @@ const LocationMorocco = () => {
                   <CardContent className="p-6 text-center">
                     <Phone className="w-8 h-8 text-primary mx-auto mb-3" />
                     <h3 className="font-bold mb-2">Téléphone</h3>
-                    <a href="tel:+212607076940" className="text-muted-foreground hover:text-primary">
-                      +212 607 076 940
+                    <a href="tel:+212703026422" className="text-muted-foreground hover:text-primary">
+                      +212 703 026 422
                     </a>
                   </CardContent>
                 </Card>
@@ -281,7 +281,7 @@ const LocationMorocco = () => {
                     <MapPin className="w-8 h-8 text-primary mx-auto mb-3" />
                     <h3 className="font-bold mb-2">WhatsApp</h3>
                     <a 
-                      href="https://wa.me/212607076940?text=Bonjour%2C%20je%20souhaite%20discuter%20avec%20vous%20concernant%20vos%20services%20au%20Maroc." 
+                      href="https://wa.me/212703026422?text=Bonjour%2C%20je%20souhaite%20discuter%20avec%20vous%20concernant%20vos%20services%20au%20Maroc." 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-muted-foreground hover:text-primary"
