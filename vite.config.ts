@@ -28,6 +28,7 @@ export default defineConfig(({ mode }) => ({
   build: {
     sourcemap: true,
     cssCodeSplit: true,
+    assetsInlineLimit: 0,  // Prevents inlining assets as data URIs
     rollupOptions: {
       output: {
         manualChunks: {
