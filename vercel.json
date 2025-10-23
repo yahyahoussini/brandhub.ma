@@ -51,7 +51,7 @@
       ]
     },
     {
-      "source": "/assets/(.*).js",
+      "source": "/assets/(.*).(js|jsx|ts|tsx|mjs)",
       "headers": [
         {
           "key": "Cache-Control",
