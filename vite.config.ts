@@ -32,35 +32,47 @@ export default defineConfig(({ mode }) => ({
     rollupOptions: {
       output: {
         manualChunks: (id) => {
-          // Critical vendors - load first
           if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router')) {
+            // React core - must be together
+            if (id.includes('react/') || id.includes('react-dom/') || id.includes('scheduler/')) {
               return 'vendor-react';
             }
+            // React Router
+            if (id.includes('react-router')) {
+              return 'vendor-router';
+            }
+            // Radix UI components
             if (id.includes('@radix-ui')) {
               return 'vendor-ui';
             }
+            // Three.js
             if (id.includes('three')) {
               return 'vendor-three';
             }
-            if (id.includes('@splinetool')) {
+            // Spline
+            if (id.includes('@splinetool') || id.includes('spline')) {
               return 'vendor-spline';
             }
+            // Particles
             if (id.includes('@tsparticles')) {
               return 'vendor-particles';
             }
-            // Other node_modules go to vendor
+            // Tanstack Query
+            if (id.includes('@tanstack')) {
+              return 'vendor-query';
+            }
+            // Other vendors
             return 'vendor';
           }
           
           // Route-based code splitting
-          if (id.includes('src/pages/admin/')) {
+          if (id.includes('/src/pages/admin/')) {
             return 'admin';
           }
-          if (id.includes('src/pages/Service')) {
+          if (id.includes('/src/pages/Service')) {
             return 'services';
           }
-          if (id.includes('src/pages/Location')) {
+          if (id.includes('/src/pages/Location')) {
             return 'locations';
           }
         },
