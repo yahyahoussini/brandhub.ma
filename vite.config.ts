@@ -26,7 +26,7 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    sourcemap: true,
+    sourcemap: false,  // Disable sourcemaps in production for smaller bundle size
     cssCodeSplit: true,
     assetsInlineLimit: 0,  // Prevents inlining assets as data URIs
     rollupOptions: {
@@ -40,8 +40,15 @@ export default defineConfig(({ mode }) => ({
         },
       },
     },
-    minify: 'esbuild',
-    target: 'es2015',
-    chunkSizeWarningLimit: 1000,
+    minify: 'terser',  // Better compression than esbuild
+    terserOptions: {
+      compress: {
+        drop_console: true,  // Remove console.logs in production
+        drop_debugger: true,
+        pure_funcs: ['console.log', 'console.info', 'console.debug'],
+      },
+    },
+    target: 'es2020',  // Modern browsers for smaller code
+    chunkSizeWarningLimit: 600,  // Stricter limits to keep bundles smaller
   },
 }));

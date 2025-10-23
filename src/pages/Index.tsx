@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { HeroSkeleton, ServicesSkeleton, TestimonialsSkeleton, ContentSkeleton } from "@/components/LoadingSkeleton";
 import { PerformanceOptimizer } from "@/components/PerformanceOptimizer";
+import { LazyLoadObserver } from "@/components/LazyLoadObserver";
 
 // Lazy load ALL heavy components for optimal performance
 const Hero = lazy(() => import("@/components/Hero"));
@@ -42,35 +43,45 @@ const Index = () => {
           <Testimonials />
         </Suspense>
       
-      <Suspense fallback={<ContentSkeleton />}>
-        <CTAWithVerticalMarquee />
-      </Suspense>
+      <LazyLoadObserver fallback={<ContentSkeleton />} rootMargin="200px">
+        <Suspense fallback={<ContentSkeleton />}>
+          <CTAWithVerticalMarquee />
+        </Suspense>
+      </LazyLoadObserver>
       
-      <Suspense fallback={<ContentSkeleton />}>
-        <NeuralNetworkHero 
-          title="Prêt à Transformer Votre Vision en Réalité?"
-          description="Discutons de votre projet et découvrez comment nous pouvons vous aider à atteindre vos objectifs avec des solutions innovantes et performantes."
-          badgeText="Technologie de Pointe"
-          badgeLabel="Nouveau"
-          ctaButtons={[
-            { text: "Consultation Gratuite", href: "https://wa.me/212703026422?text=Bonjour%2C%20je%20souhaite%20une%20consultation%20gratuite.%20Je%20vous%20contacte%20depuis%20la%20section%20technologique%20de%20votre%20site.", primary: true },
-            { text: "Voir Nos Projets", href: "/services/programming" }
-          ]}
-          microDetails={["Innovation constante", "Expertise confirmée", "Résultats garantis"]}
-        />
-      </Suspense>
+      <LazyLoadObserver fallback={<ContentSkeleton />} rootMargin="200px">
+        <Suspense fallback={<ContentSkeleton />}>
+          <NeuralNetworkHero 
+            title="Prêt à Transformer Votre Vision en Réalité?"
+            description="Discutons de votre projet et découvrez comment nous pouvons vous aider à atteindre vos objectifs avec des solutions innovantes et performantes."
+            badgeText="Technologie de Pointe"
+            badgeLabel="Nouveau"
+            ctaButtons={[
+              { text: "Consultation Gratuite", href: "https://wa.me/212703026422?text=Bonjour%2C%20je%20souhaite%20une%20consultation%20gratuite.%20Je%20vous%20contacte%20depuis%20la%20section%20technologique%20de%20votre%20site.", primary: true },
+              { text: "Voir Nos Projets", href: "/services/programming" }
+            ]}
+            microDetails={["Innovation constante", "Expertise confirmée", "Résultats garantis"]}
+          />
+        </Suspense>
+      </LazyLoadObserver>
       
-      <Suspense fallback={<ContentSkeleton />}>
-        <WorldMapSection />
-      </Suspense>
+      <LazyLoadObserver fallback={<ContentSkeleton />} rootMargin="200px">
+        <Suspense fallback={<ContentSkeleton />}>
+          <WorldMapSection />
+        </Suspense>
+      </LazyLoadObserver>
       
-      <Suspense fallback={<ContentSkeleton />}>
-        <TechStackCloud />
-      </Suspense>
+      <LazyLoadObserver fallback={<ContentSkeleton />} rootMargin="200px">
+        <Suspense fallback={<ContentSkeleton />}>
+          <TechStackCloud />
+        </Suspense>
+      </LazyLoadObserver>
       
-      <Suspense fallback={<ContentSkeleton />}>
-        <BlogPreview />
-      </Suspense>
+      <LazyLoadObserver fallback={<ContentSkeleton />} rootMargin="200px">
+        <Suspense fallback={<ContentSkeleton />}>
+          <BlogPreview />
+        </Suspense>
+      </LazyLoadObserver>
       </main>
       
       <Footer />
