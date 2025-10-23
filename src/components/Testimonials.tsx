@@ -3,6 +3,7 @@ import { Star, Quote } from "lucide-react";
 import { SparklesCore } from "./ui/sparkles";
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
+import { Helmet } from "react-helmet";
 
 interface Testimonial {
   id: string;
@@ -45,8 +46,47 @@ const Testimonials = () => {
     return null;
   }
 
+  // Generate Review schema for testimonials
+  const reviewSchema = testimonials.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "BrandHub.ma",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": (testimonials.reduce((acc, t) => acc + t.rating, 0) / testimonials.length).toFixed(1),
+      "reviewCount": testimonials.length,
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": testimonials.map(testimonial => ({
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": testimonial.name
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": testimonial.rating.toString(),
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": testimonial.content,
+      "publisher": {
+        "@type": "Organization",
+        "name": testimonial.company || "Client BrandHub.ma"
+      }
+    }))
+  } : null;
+
   return (
     <section className="py-20 bg-background" style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }}>
+      {reviewSchema && (
+        <Helmet>
+          <script type="application/ld+json">
+            {JSON.stringify(reviewSchema)}
+          </script>
+        </Helmet>
+      )}
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <div className="relative inline-block">
