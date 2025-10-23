@@ -31,50 +31,15 @@ export default defineConfig(({ mode }) => ({
     assetsInlineLimit: 0,  // Prevents inlining assets as data URIs
     rollupOptions: {
       output: {
-        manualChunks: (id) => {
-          if (id.includes('node_modules')) {
-            // React core - must be together
-            if (id.includes('react/') || id.includes('react-dom/') || id.includes('scheduler/')) {
-              return 'vendor-react';
-            }
-            // React Router
-            if (id.includes('react-router')) {
-              return 'vendor-router';
-            }
-            // Radix UI components
-            if (id.includes('@radix-ui')) {
-              return 'vendor-ui';
-            }
-            // Three.js
-            if (id.includes('three')) {
-              return 'vendor-three';
-            }
-            // Spline
-            if (id.includes('@splinetool') || id.includes('spline')) {
-              return 'vendor-spline';
-            }
-            // Particles
-            if (id.includes('@tsparticles')) {
-              return 'vendor-particles';
-            }
-            // Tanstack Query
-            if (id.includes('@tanstack')) {
-              return 'vendor-query';
-            }
-            // Other vendors
-            return 'vendor';
-          }
-          
-          // Route-based code splitting
-          if (id.includes('/src/pages/admin/')) {
-            return 'admin';
-          }
-          if (id.includes('/src/pages/Service')) {
-            return 'services';
-          }
-          if (id.includes('/src/pages/Location')) {
-            return 'locations';
-          }
+        manualChunks: {
+          // React ecosystem - keep together to avoid duplicates
+          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+          // UI components
+          'vendor-ui': ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-toast'],
+          // Heavy 3D libraries - separate for lazy loading
+          'vendor-three': ['three'],
+          'vendor-spline': ['@splinetool/react-spline'],
+          'vendor-particles': ['@tsparticles/react', '@tsparticles/engine', '@tsparticles/slim'],
         },
       },
     },
