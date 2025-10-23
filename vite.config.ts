@@ -31,12 +31,38 @@ export default defineConfig(({ mode }) => ({
     assetsInlineLimit: 0,  // Prevents inlining assets as data URIs
     rollupOptions: {
       output: {
-        manualChunks: {
-          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
-          'vendor-ui': ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-toast'],
-          'vendor-three': ['three'],
-          'vendor-spline': ['@splinetool/react-spline'],
-          'vendor-particles': ['@tsparticles/react', '@tsparticles/engine', '@tsparticles/slim'],
+        manualChunks: (id) => {
+          // Critical vendors - load first
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router')) {
+              return 'vendor-react';
+            }
+            if (id.includes('@radix-ui')) {
+              return 'vendor-ui';
+            }
+            if (id.includes('three')) {
+              return 'vendor-three';
+            }
+            if (id.includes('@splinetool')) {
+              return 'vendor-spline';
+            }
+            if (id.includes('@tsparticles')) {
+              return 'vendor-particles';
+            }
+            // Other node_modules go to vendor
+            return 'vendor';
+          }
+          
+          // Route-based code splitting
+          if (id.includes('src/pages/admin/')) {
+            return 'admin';
+          }
+          if (id.includes('src/pages/Service')) {
+            return 'services';
+          }
+          if (id.includes('src/pages/Location')) {
+            return 'locations';
+          }
         },
       },
     },
