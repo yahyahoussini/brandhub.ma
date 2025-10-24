@@ -2,12 +2,52 @@ import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
+import EnhancedFAQ from "@/components/EnhancedFAQ";
 import { Card, CardContent } from "@/components/ui/card";
 import { Building2, TrendingUp, Globe, Users, MapPin, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const LocationMorocco = () => {
+  // Enhanced FAQ data for Morocco SEO
+  const moroccoFAQs = [
+    {
+      question: "Combien coûte la création d'un site web au Maroc?",
+      answer: "Les prix varient selon vos besoins:<br/>• <strong>Site vitrine (5 pages):</strong> 3000-5000 MAD incluant design responsive, formulaire de contact et SEO de base<br/>• <strong>E-commerce:</strong> 8000-15000 MAD avec catalogue produits, paiement CMI/PayPal et gestion stock<br/>• <strong>Site sur mesure:</strong> 15000-50000 MAD avec fonctionnalités personnalisées et intégrations API<br/>Tous nos prix incluent hébergement 1 an, formation et support. <Link to='/contact' className='text-primary'>Demandez votre devis gratuit</Link>.",
+      category: "Prix & Tarifs"
+    },
+    {
+      question: "Dans quelles villes du Maroc intervenez-vous?",
+      answer: "Nous intervenons dans toutes les villes du Maroc:<br/>• <strong>Principales:</strong> Casablanca, Rabat, Marrakech, Fès, Tanger, Agadir<br/>• <strong>Secondaires:</strong> Meknès, Oujda, Kenitra, Tétouan, Salé, Mohammedia<br/>• <strong>Partout au Maroc:</strong> Déplacements possibles ou services 100% en ligne<br/>Support en français et arabe pour tous nos clients marocains.",
+      category: "Couverture Géographique"
+    },
+    {
+      question: "Quels sont les délais de création d'un site web au Maroc?",
+      answer: "Délais garantis selon le type de projet:<br/>• <strong>Site vitrine:</strong> 2-3 semaines<br/>• <strong>E-commerce standard:</strong> 4-6 semaines<br/>• <strong>Application web complexe:</strong> 6-12 semaines<br/>• <strong>Urgence:</strong> Supplément 30% pour livraison express<br/>Planning détaillé fourni dès validation du devis. Suivi projet en temps réel disponible.",
+      category: "Délais & Planning"
+    },
+    {
+      question: "Proposez-vous la maintenance et l'hébergement au Maroc?",
+      answer: "Oui, services complets d'hébergement et maintenance:<br/>• <strong>Hébergement:</strong> Serveurs optimisés pour le Maroc (latence réduite)<br/>• <strong>Maintenance:</strong> Mises à jour sécurité, sauvegarde quotidienne, monitoring 24/7<br/>• <strong>Support:</strong> Équipe technique en français et arabe<br/>• <strong>Forfaits:</strong> Dès 300 MAD/mois tout inclus<br/>Garantie 99.9% uptime et intervention rapide en cas de problème.",
+      category: "Maintenance & Support"
+    },
+    {
+      question: "Comment se déroule le paiement pour nos services au Maroc?",
+      answer: "Options de paiement flexibles adaptées au Maroc:<br/>• <strong>Virement bancaire:</strong> BMCE, Attijariwafa Bank, CIH Bank<br/>• <strong>Paiement mobile:</strong> Orange Money, Inwi Money<br/>• <strong>Espèces:</strong> Possible pour rendez-vous à Casablanca<br/>• <strong>Échelonnement:</strong> 50% à la commande, 50% à la livraison<br/>Factures officielles conformes à la réglementation marocaine.",
+      category: "Paiement & Facturation"
+    },
+    {
+      question: "Vos sites sont-ils optimisés pour le marché marocain?",
+      answer: "Optimisation spécifique pour le Maroc:<br/>• <strong>Langues:</strong> Français, Arabe, Anglais selon besoins<br/>• <strong>Paiements:</strong> CMI, CashPlus, PayPal, Orange Money<br/>• <strong>SEO local:</strong> Mots-clés et stratégie pour Google.ma<br/>• <strong>Performance:</strong> Serveurs CDN optimisés Maroc/Afrique<br/>• <strong>Légal:</strong> Conformité RGPD et réglementation marocaine<br/>Expertise du marché local depuis 2020.",
+      category: "Spécificités Maroc"
+    },
+    {
+      question: "Offrez-vous des formations sur l'utilisation du site?",
+      answer: "Formation complète incluse dans tous nos projets:<br/>• <strong>Session individuelle:</strong> 2h de formation personnalisée<br/>• <strong>Documentation:</strong> Guides utilisateur en français<br/>• <strong>Vidéos tutoriels:</strong> Accès plateforme de formation<br/>• <strong>Support continu:</strong> Questions illimitées 3 premiers mois<br/>Formation adaptée au niveau technique de votre équipe au Maroc.",
+      category: "Formation & Support"
+    }
+  ];
+
   return (
     <>
       <Helmet>
@@ -186,7 +226,8 @@ const LocationMorocco = () => {
                   <h3 className="text-xl font-bold mb-3">Développement Web Maroc</h3>
                   <p className="text-muted-foreground">
                     Création de sites web professionnels, e-commerce et applications web sur mesure pour entreprises marocaines. 
-                    Technologies modernes et SEO optimisé pour le marché marocain.
+                    Technologies modernes et SEO optimisé pour le marché marocain. Découvrez nos 
+                    <Link to="/services/programming" className="text-primary hover:underline"> services de développement web complets</Link>.
                   </p>
                 </CardContent>
               </Card>
@@ -199,7 +240,8 @@ const LocationMorocco = () => {
                   <h3 className="text-xl font-bold mb-3">Branding & Design Graphique</h3>
                   <p className="text-muted-foreground">
                     Création d'identité visuelle, logo design, charte graphique et supports marketing pour marques marocaines. 
-                    Design qui capture l'essence de votre entreprise au Maroc.
+                    Design qui capture l'essence de votre entreprise au Maroc. Explorez nos 
+                    <Link to="/services/graphics" className="text-primary hover:underline"> services de design et branding</Link>.
                   </p>
                 </CardContent>
               </Card>
@@ -212,7 +254,8 @@ const LocationMorocco = () => {
                   <h3 className="text-xl font-bold mb-3">Marketing Digital Maroc</h3>
                   <p className="text-muted-foreground">
                     Stratégies SEO, publicité Google Ads, gestion réseaux sociaux et content marketing pour entreprises au Maroc. 
-                    Augmentez votre visibilité en ligne sur le marché marocain.
+                    Augmentez votre visibilité en ligne sur le marché marocain. Consultez nos 
+                    <Link to="/services/content" className="text-primary hover:underline"> solutions de marketing digital</Link>.
                   </p>
                 </CardContent>
               </Card>
@@ -405,11 +448,21 @@ const LocationMorocco = () => {
 
               <p className="text-lg text-muted-foreground">
                 Agence de développement web et branding au service des entreprises marocaines depuis plusieurs années. 
-                Transformez votre présence digitale au Maroc avec nos solutions professionnelles.
+                Transformez votre présence digitale au Maroc avec nos solutions professionnelles. 
+                <Link to="/about" className="text-primary hover:underline">Découvrez notre histoire</Link> et 
+                <Link to="/blog" className="text-primary hover:underline">consultez nos articles spécialisés</Link> pour en savoir plus.
               </p>
             </div>
           </div>
         </section>
+
+        {/* Enhanced FAQ Section for Morocco SEO */}
+        <EnhancedFAQ 
+          faqs={moroccoFAQs}
+          title="Questions Fréquentes - Services Web au Maroc"
+          description="Tout ce que vous devez savoir sur nos services de développement web, prix et processus au Maroc"
+          pageType="location"
+        />
 
         <CTASection />
         <Footer />

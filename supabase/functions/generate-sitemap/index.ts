@@ -1,151 +1,116 @@
-import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.39.3";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-}
+};
 
 serve(async (req) => {
-  // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
-    return new Response('ok', { headers: corsHeaders })
+    return new Response(null, { headers: corsHeaders });
   }
 
   try {
-    const supabase = createClient(
-      Deno.env.get('SUPABASE_URL') ?? '',
-      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
-    )
+    // Create Supabase client
+    const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
+    const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+    const supabase = createClient(supabaseUrl, supabaseKey);
 
-    const { data: posts } = await supabase
+    // Fetch published blog posts
+    const { data: blogPosts, error } = await supabase
       .from('blog_posts')
-      .select('slug, published_at')
+      .select('slug, updated_at, published_at, category')
       .eq('is_published', true)
-      .order('published_at', { ascending: false })
+      .order('published_at', { ascending: false });
 
-    const blogUrls = posts?.map(post => `
-  <url>
-    <loc>https://brandhub.ma/blog/${post.slug}</loc>
-    <lastmod>${new Date(post.published_at).toISOString().split('T')[0]}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>`).join('') || ''
+    if (error) {
+      console.error('Error fetching blog posts:', error);
+      throw error;
+    }
 
-    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+    // Generate XML sitemap
+    const now = new Date().toISOString();
+    const baseUrl = 'https://brandhub.ma';
+    
+    // Static pages with priorities
+    const staticPages = [
+      { url: '/', priority: '1.0', changefreq: 'daily', lastmod: now },
+      { url: '/maroc', priority: '0.95', changefreq: 'weekly', lastmod: now },
+      { url: '/services/programming', priority: '0.9', changefreq: 'weekly', lastmod: now },
+      { url: '/services/graphics', priority: '0.9', changefreq: 'weekly', lastmod: now },
+      { url: '/services/content', priority: '0.9', changefreq: 'weekly', lastmod: now },
+      { url: '/services/business', priority: '0.9', changefreq: 'weekly', lastmod: now },
+      { url: '/about', priority: '0.8', changefreq: 'monthly', lastmod: now },
+      { url: '/contact', priority: '0.8', changefreq: 'monthly', lastmod: now },
+      { url: '/blog', priority: '0.8', changefreq: 'weekly', lastmod: now },
+      { url: '/espana', priority: '0.7', changefreq: 'monthly', lastmod: now },
+      { url: '/saudi-arabia', priority: '0.7', changefreq: 'monthly', lastmod: now },
+      { url: '/terms', priority: '0.3', changefreq: 'yearly', lastmod: '2024-10-01' }
+    ];
+
+    // Generate XML
+    let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <!-- Homepage -->
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">`;
+
+    // Add static pages
+    staticPages.forEach(page => {
+      const lastmod = page.lastmod || now;
+      sitemap += `
   <url>
-    <loc>https://brandhub.ma/</loc>
-    <lastmod>2024-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="fr-ma" href="https://brandhub.ma/" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://brandhub.ma/" />
-    <xhtml:link rel="alternate" hreflang="ar-ma" href="https://brandhub.ma/" />
-  </url>
-  
-  <!-- About -->
+    <loc>${baseUrl}${page.url}</loc>
+    <lastmod>${lastmod}</lastmod>
+    <changefreq>${page.changefreq}</changefreq>
+    <priority>${page.priority}</priority>`;
+      
+      // Add hreflang for main pages
+      if (page.url === '/' || page.url === '/maroc') {
+        sitemap += `
+    <xhtml:link rel="alternate" hreflang="fr-ma" href="${baseUrl}${page.url}" />
+    <xhtml:link rel="alternate" hreflang="fr" href="${baseUrl}${page.url}" />
+    <xhtml:link rel="alternate" hreflang="ar-ma" href="${baseUrl}${page.url}" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="${baseUrl}${page.url}" />`;
+      }
+      
+      sitemap += `
+  </url>`;
+    });
+
+    // Add blog posts
+    blogPosts?.forEach(post => {
+      const lastmod = post.updated_at || post.published_at;
+      const priority = post.category === 'Morocco' ? '0.8' : '0.7';
+      
+      sitemap += `
   <url>
-    <loc>https://brandhub.ma/about</loc>
-    <lastmod>2024-12-15</lastmod>
+    <loc>${baseUrl}/blog/${post.slug}</loc>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Services -->
-  <url>
-    <loc>https://brandhub.ma/services/programming</loc>
-    <lastmod>2024-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://brandhub.ma/services/graphics</loc>
-    <lastmod>2024-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://brandhub.ma/services/content</loc>
-    <lastmod>2024-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://brandhub.ma/services/business</loc>
-    <lastmod>2024-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <!-- Blog -->
-  <url>
-    <loc>https://brandhub.ma/blog</loc>
-    <lastmod>2024-12-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Blog Posts -->
-  ${blogUrls}
-  
-  <!-- Contact -->
-  <url>
-    <loc>https://brandhub.ma/contact</loc>
-    <lastmod>2024-12-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- Terms -->
-  <url>
-    <loc>https://brandhub.ma/terms</loc>
-    <lastmod>2024-10-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  
-  <!-- Locations -->
-  <url>
-    <loc>https://brandhub.ma/maroc</loc>
-    <lastmod>2024-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://brandhub.ma/espana</loc>
-    <lastmod>2024-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://brandhub.ma/saudi-arabia</loc>
-    <lastmod>2024-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-</urlset>`
+    <priority>${priority}</priority>
+  </url>`;
+    });
+
+    sitemap += `
+</urlset>`;
 
     return new Response(sitemap, {
-      headers: { 
+      headers: {
         ...corsHeaders,
         'Content-Type': 'application/xml',
         'Cache-Control': 'public, max-age=3600' // Cache for 1 hour
       }
-    })
+    });
+
   } catch (error) {
-    return new Response(JSON.stringify({ error: error.message }), {
-      status: 500,
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-    })
+    console.error('Error generating sitemap:', error);
+    return new Response(
+      JSON.stringify({ error: error instanceof Error ? error.message : 'Unknown error' }),
+      { 
+        status: 500, 
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+      }
+    );
   }
-})
+});

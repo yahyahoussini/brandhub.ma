@@ -147,6 +147,71 @@ const ServiceBusiness = () => {
             }
           })}
         </script>
+        
+        {/* HowTo Schema for Business Process (AEO) */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": "Comment nous optimisons votre stratégie business au Maroc",
+            "description": "Notre processus d'analyse et optimisation business en 5 étapes pour maximiser votre croissance",
+            "totalTime": "PT6W",
+            "estimatedCost": {
+              "@type": "MonetaryAmount",
+              "currency": "MAD",
+              "value": "8000"
+            },
+            "step": [
+              {
+                "@type": "HowToStep",
+                "position": 1,
+                "name": "Audit Business Complet",
+                "text": "Analyse approfondie de votre entreprise, concurrence au Maroc, positionnement marché et identification des opportunités de croissance",
+                "url": "https://brandhub.ma/services/business#audit"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 2,
+                "name": "Analyse de Données",
+                "text": "Collecte et analyse de vos données business, création de dashboards KPI et identification des leviers de performance",
+                "url": "https://brandhub.ma/services/business#analytics"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 3,
+                "name": "Stratégie & Plan d'Action",
+                "text": "Développement d'une stratégie business sur mesure avec plan d'action détaillé et objectifs SMART",
+                "url": "https://brandhub.ma/services/business#strategy"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 4,
+                "name": "Implémentation",
+                "text": "Mise en œuvre des recommandations avec accompagnement de votre équipe et formation aux nouveaux processus",
+                "url": "https://brandhub.ma/services/business#implementation"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 5,
+                "name": "Suivi & Optimisation",
+                "text": "Monitoring continu des résultats, ajustements basés sur les données et optimisation pour atteindre vos objectifs",
+                "url": "https://brandhub.ma/services/business#monitoring"
+              }
+            ]
+          })}
+        </script>
+        
+        {/* Speakable Schema for Voice Search */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", "h2", ".service-description"]
+            }
+          })}
+        </script>
       </Helmet>
       <Navbar />
       

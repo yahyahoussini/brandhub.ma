@@ -148,6 +148,78 @@ const ServiceGraphics = () => {
             }
           })}
         </script>
+        
+        {/* HowTo Schema for Design Process (AEO) */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": "Comment nous créons votre identité visuelle au Maroc",
+            "description": "Notre processus de design graphique et création d'identité visuelle en 6 étapes professionnelles",
+            "totalTime": "PT3W",
+            "estimatedCost": {
+              "@type": "MonetaryAmount",
+              "currency": "MAD",
+              "value": "4000"
+            },
+            "step": [
+              {
+                "@type": "HowToStep",
+                "position": 1,
+                "name": "Brief & Recherche",
+                "text": "Analyse approfondie de votre marque, marché cible et concurrence au Maroc pour créer un brief créatif solide",
+                "url": "https://brandhub.ma/services/graphics#brief"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 2,
+                "name": "Concepts & Moodboard",
+                "text": "Création de moodboards et exploration de directions créatives adaptées au marché marocain et à votre secteur",
+                "url": "https://brandhub.ma/services/graphics#concepts"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 3,
+                "name": "Design Logo",
+                "text": "Création de propositions de logo avec variations, couleurs et typographies professionnelles",
+                "url": "https://brandhub.ma/services/graphics#logo"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 4,
+                "name": "Identité Complète",
+                "text": "Développement de l'identité visuelle complète: palette couleurs, typographies, éléments graphiques, patterns",
+                "url": "https://brandhub.ma/services/graphics#identity"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 5,
+                "name": "Applications",
+                "text": "Déclinaison sur supports de communication: cartes de visite, papeterie, signalétique, web",
+                "url": "https://brandhub.ma/services/graphics#applications"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 6,
+                "name": "Charte Graphique",
+                "text": "Création du guide de style complet (brand guidelines) pour utilisation cohérente de votre identité",
+                "url": "https://brandhub.ma/services/graphics#guidelines"
+              }
+            ]
+          })}
+        </script>
+        
+        {/* Speakable Schema for Voice Search */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", "h2", ".service-description"]
+            }
+          })}
+        </script>
       </Helmet>
       <Navbar />
       

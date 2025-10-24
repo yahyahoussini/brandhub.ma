@@ -147,6 +147,71 @@ const ServiceContent = () => {
             }
           })}
         </script>
+        
+        {/* HowTo Schema for Content Process (AEO) */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": "Comment nous créons votre contenu marketing au Maroc",
+            "description": "Notre processus de création de contenu et marketing digital en 5 étapes pour maximiser votre impact",
+            "totalTime": "PT2W",
+            "estimatedCost": {
+              "@type": "MonetaryAmount",
+              "currency": "MAD",
+              "value": "3500"
+            },
+            "step": [
+              {
+                "@type": "HowToStep",
+                "position": 1,
+                "name": "Stratégie & Audit",
+                "text": "Analyse de votre marché au Maroc, audit de contenu existant et définition d'une stratégie content marketing adaptée à votre audience",
+                "url": "https://brandhub.ma/services/content#strategy"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 2,
+                "name": "Calendrier Éditorial",
+                "text": "Création d'un planning de contenu mensuel avec sujets optimisés SEO et adaptés aux tendances du marché marocain",
+                "url": "https://brandhub.ma/services/content#calendar"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 3,
+                "name": "Création de Contenu",
+                "text": "Rédaction d'articles de blog, posts réseaux sociaux, newsletters et contenus web optimisés pour votre audience marocaine",
+                "url": "https://brandhub.ma/services/content#creation"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 4,
+                "name": "Optimisation SEO",
+                "text": "Optimisation de chaque contenu pour les moteurs de recherche avec mots-clés pertinents pour le marché marocain",
+                "url": "https://brandhub.ma/services/content#seo"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 5,
+                "name": "Publication & Analyse",
+                "text": "Publication multi-canaux et analyse des performances avec ajustements basés sur les résultats",
+                "url": "https://brandhub.ma/services/content#analytics"
+              }
+            ]
+          })}
+        </script>
+        
+        {/* Speakable Schema for Voice Search */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", "h2", ".service-description"]
+            }
+          })}
+        </script>
       </Helmet>
       <Navbar />
       
