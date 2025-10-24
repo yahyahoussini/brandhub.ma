@@ -1,10 +1,12 @@
 import { useParams, Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Calendar, User, ArrowLeft, Share2 } from "lucide-react";
+import { Calendar, User, ArrowLeft } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useEffect, useState } from "react";
+import { SocialShare } from "@/components/SocialShare";
 
 interface BlogPostData {
   title: string;
@@ -12,6 +14,8 @@ interface BlogPostData {
   category: string;
   image_url: string;
   content: string;
+  excerpt?: string;
+  slug?: string;
 }
 
 const BlogPost = () => {
@@ -59,7 +63,7 @@ const BlogPost = () => {
     const fetchPost = async () => {
       const { data, error } = await supabase
         .from('blog_posts')
-        .select('title, published_at, category, image_url, content')
+        .select('title, published_at, category, image_url, content, excerpt, slug')
         .eq('slug', id)
         .eq('is_published', true)
         .maybeSingle();
@@ -117,8 +121,63 @@ const BlogPost = () => {
     );
   }
 
+  const currentUrl = `https://brandhub.ma/blog/${id}`;
+  const cleanContent = post?.content?.replace(/<[^>]*>/g, '').substring(0, 160) || '';
+
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>{post?.title} | Blog BrandHub.ma</title>
+        <meta name="description" content={post?.excerpt || cleanContent || `Découvrez notre article sur ${post?.category?.toLowerCase()}`} />
+        <link rel="canonical" href={currentUrl} />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content={post?.title} />
+        <meta property="og:description" content={post?.excerpt || cleanContent} />
+        <meta property="og:url" content={currentUrl} />
+        <meta property="og:type" content="article" />
+        <meta property="og:image" content={post?.image_url || 'https://brandhub.ma/favicone.png'} />
+        <meta property="article:published_time" content={post?.published_at} />
+        <meta property="article:author" content="BrandHub.ma" />
+        <meta property="article:section" content={post?.category} />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post?.title} />
+        <meta name="twitter:description" content={post?.excerpt || cleanContent} />
+        <meta name="twitter:image" content={post?.image_url || 'https://brandhub.ma/favicone.png'} />
+        
+        {/* Article Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": post?.title,
+            "description": post?.excerpt || cleanContent,
+            "image": post?.image_url,
+            "datePublished": post?.published_at,
+            "dateModified": post?.published_at,
+            "author": {
+              "@type": "Organization",
+              "name": "BrandHub.ma",
+              "url": "https://brandhub.ma"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "BrandHub.ma",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://brandhub.ma/favicone.png"
+              }
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": currentUrl
+            }
+          })}
+        </script>
+      </Helmet>
+      
       <Navbar />
       
       <article className="pt-32 pb-20">
@@ -150,21 +209,30 @@ const BlogPost = () => {
               <span>{formatDate(post.published_at)}</span>
             </div>
             <div className="flex items-center space-x-2">
-              <User className="w-5 h-5" />
+              <User className="w-5 h-5" aria-hidden="true" />
               <span>Équipe BrandHub.ma</span>
             </div>
-            <Button variant="ghost" size="sm">
-              <Share2 className="w-4 h-4 mr-2" />
-              Partager
-            </Button>
+          </div>
+
+          {/* Social Share */}
+          <div className="mb-8">
+            <SocialShare 
+              url={currentUrl}
+              title={post.title}
+              description={post.excerpt || cleanContent}
+            />
+          </div>
           </div>
 
           {/* Featured Image */}
           <div className="aspect-video mb-12 rounded-2xl overflow-hidden shadow-elegant animate-fade-in">
             <img 
               src={post.image_url || 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=1200&h=600&fit=crop'} 
-              alt={post.title}
+              alt={`Image de couverture: ${post.title}`}
               loading="lazy"
+              width="1200"
+              height="600"
+              decoding="async"
               className="w-full h-full object-cover"
             />
           </div>

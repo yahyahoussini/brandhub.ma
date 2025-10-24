@@ -20,12 +20,22 @@ const getBreadcrumbs = (pathname: string): BreadcrumbItem[] => {
     "/services/graphics": "Design Graphique",
     "/services/content": "Création de Contenu",
     "/services/business": "Solutions Business",
-    "/location/morocco": "Maroc",
-    "/location/spain": "Espagne",
-    "/location/saudi-arabia": "Arabie Saoudite",
+    "/maroc": "Maroc",
+    "/espana": "Espagne",
+    "/saudi-arabia": "Arabie Saoudite",
   };
 
-  if (pathname !== "/" && paths[pathname]) {
+  // Handle nested paths like /blog/:slug
+  if (pathname.startsWith('/blog/') && pathname !== '/blog') {
+    breadcrumbs.push({
+      name: "Blog",
+      url: "https://brandhub.ma/blog"
+    });
+    breadcrumbs.push({
+      name: "Article",
+      url: `https://brandhub.ma${pathname}`
+    });
+  } else if (pathname !== "/" && paths[pathname]) {
     breadcrumbs.push({
       name: paths[pathname],
       url: `https://brandhub.ma${pathname}`

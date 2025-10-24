@@ -41,6 +41,7 @@ import AdminRevenue from "./pages/admin/AdminRevenue";
 import AdminMarketing from "./pages/admin/AdminMarketing";
 import AdminEmail from "./pages/admin/AdminEmail";
 import NotFound from "./pages/NotFound";
+import { CookieConsent } from "@/components/CookieConsent";
 
 const queryClient = new QueryClient();
 
@@ -49,6 +50,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <CookieConsent />
       <BrowserRouter
         future={{
           v7_startTransition: true,

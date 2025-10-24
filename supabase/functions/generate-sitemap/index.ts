@@ -1,4 +1,38 @@
-<?xml version="1.0" encoding="UTF-8"?>
+import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+}
+
+serve(async (req) => {
+  // Handle CORS preflight requests
+  if (req.method === 'OPTIONS') {
+    return new Response('ok', { headers: corsHeaders })
+  }
+
+  try {
+    const supabase = createClient(
+      Deno.env.get('SUPABASE_URL') ?? '',
+      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
+    )
+
+    const { data: posts } = await supabase
+      .from('blog_posts')
+      .select('slug, published_at')
+      .eq('is_published', true)
+      .order('published_at', { ascending: false })
+
+    const blogUrls = posts?.map(post => `
+  <url>
+    <loc>https://brandhub.ma/blog/${post.slug}</loc>
+    <lastmod>${new Date(post.published_at).toISOString().split('T')[0]}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>`).join('') || ''
+
+    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
@@ -58,6 +92,9 @@
     <priority>0.8</priority>
   </url>
   
+  <!-- Blog Posts -->
+  ${blogUrls}
+  
   <!-- Contact -->
   <url>
     <loc>https://brandhub.ma/contact</loc>
@@ -96,4 +133,19 @@
     <priority>0.8</priority>
   </url>
   
-</urlset>
+</urlset>`
+
+    return new Response(sitemap, {
+      headers: { 
+        ...corsHeaders,
+        'Content-Type': 'application/xml',
+        'Cache-Control': 'public, max-age=3600' // Cache for 1 hour
+      }
+    })
+  } catch (error) {
+    return new Response(JSON.stringify({ error: error.message }), {
+      status: 500,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    })
+  }
+})

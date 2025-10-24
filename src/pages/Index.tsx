@@ -1,4 +1,5 @@
 import { lazy, Suspense } from "react";
+import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { HeroSkeleton, ServicesSkeleton, TestimonialsSkeleton, ContentSkeleton } from "@/components/LoadingSkeleton";
@@ -18,6 +19,14 @@ const BlogPreview = lazy(() => import("@/components/BlogPreview"));
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>BrandHub.ma - Agence Digitale Premium au Maroc & Afrique | Développement Web, Design & Marketing</title>
+        <meta name="description" content="BrandHub - Leading branding agency in Morocco, Africa, Middle East & Europe. Expert brand identity design, digital marketing & creative solutions. Professional services in Casablanca, Spain, Saudi Arabia." />
+        <link rel="canonical" href="https://brandhub.ma/" />
+        <meta property="og:url" content="https://brandhub.ma/" />
+        <meta name="twitter:url" content="https://brandhub.ma/" />
+      </Helmet>
+      
       <PerformanceOptimizer />
       
       {/* Skip to main content link for keyboard navigation */}
