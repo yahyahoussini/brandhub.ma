@@ -6,9 +6,13 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 import ProcessSection from "@/components/ProcessSection";
+import EnhancedFAQ from "@/components/EnhancedFAQ";
 import GlassCard from "@/components/ui/glass-card";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { WavyBackground } from "@/components/ui/wavy-background";
-import { Palette, Layers, PenTool, Image, Video, Package, Search, Lightbulb, Pencil, Sparkles, CheckCircle } from "lucide-react";
+import { Palette, Layers, PenTool, Image, Video, Package, Search, Lightbulb, Pencil, Sparkles, CheckCircle, Award, Globe, Shield, Code, BarChart3, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface Service {
   id: string;
@@ -108,6 +112,45 @@ const ServiceGraphics = () => {
       title: "Livraison & Support",
       description: "Livraison des fichiers finaux dans tous les formats nécessaires avec support continu.",
       icon: CheckCircle
+    }
+  ];
+
+  // FAQ Data for Graphics Page
+  const graphicsFAQs = [
+    {
+      question: "Combien coûte la création d'un logo professionnel au Maroc?",
+      answer: "Nos tarifs logo varient selon vos besoins:<br/>• <strong>Logo simple:</strong> 1500-3000 MAD<br/>• <strong>Logo + variations:</strong> 3000-5000 MAD<br/>• <strong>Identité complète:</strong> 5000-10000 MAD<br/>Inclus: fichiers vectoriels, déclinaisons couleurs, guide d'utilisation.",
+      category: "Prix & Tarifs"
+    },
+    {
+      question: "Quels formats de fichiers recevrai-je pour mon design?",
+      answer: "Vous recevez tous les formats nécessaires:<br/>• <strong>Vectoriels:</strong> AI, EPS, PDF pour impression<br/>• <strong>Web:</strong> PNG, JPG, SVG haute résolution<br/>• <strong>Réseaux sociaux:</strong> Formats optimisés Facebook, Instagram<br/>• <strong>Print:</strong> Haute résolution 300 DPI minimum<br/>Propriété complète de tous vos fichiers garantie.",
+      category: "Fichiers & Formats"
+    },
+    {
+      question: "Combien de révisions sont incluses dans vos services design?",
+      answer: "Révisions généreuses pour votre satisfaction:<br/>• <strong>Concepts initiaux:</strong> 3 propositions différentes<br/>• <strong>Révisions mineures:</strong> Illimitées (couleurs, textes)<br/>• <strong>Révisions majeures:</strong> 2 modifications structurelles<br/>• <strong>Validation finale:</strong> Ajustements jusqu'à satisfaction<br/>Communication directe avec votre designer attitré.",
+      category: "Processus & Révisions"
+    },
+    {
+      question: "Travaillez-vous avec tous types d'entreprises au Maroc?",
+      answer: "Oui, nous adaptons notre design à tout secteur:<br/>• <strong>PME locales:</strong> Restaurants, boutiques, services<br/>• <strong>Startups:</strong> Tech, digital, innovation<br/>• <strong>Grandes entreprises:</strong> Industrie, finance, télécoms<br/>• <strong>Associations:</strong> ONG, fondations, événements<br/>Portfolio diversifié avec +200 projets au Maroc.",
+      category: "Secteurs d'Activité"
+    },
+    {
+      question: "Proposez-vous des services de print et signalétique?",
+      answer: "Services design print complets au Maroc:<br/>• <strong>Papeterie:</strong> Cartes visite, en-têtes, factures<br/>• <strong>Marketing:</strong> Flyers, brochures, catalogues<br/>• <strong>Signalétique:</strong> Enseignes, panneaux, vitrophanies<br/>• <strong>Textile:</strong> T-shirts, uniformes, goodies<br/>Réseau partenaires imprimeurs dans tout le Maroc.",
+      category: "Print & Signalétique"
+    },
+    {
+      question: "Combien de temps pour créer une identité visuelle complète?",
+      answer: "Délais selon l'étendue du projet:<br/>• <strong>Logo seul:</strong> 5-7 jours<br/>• <strong>Identité de base:</strong> 2-3 semaines<br/>• <strong>Identité complète:</strong> 3-4 semaines<br/>• <strong>Brand book complet:</strong> 4-6 semaines<br/>Rush possible avec supplément 30% pour projets urgents.",
+      category: "Délais"
+    },
+    {
+      question: "Pouvez-vous refondre l'identité d'une entreprise existante?",
+      answer: "Spécialistes en rebranding et refonte identitaire:<br/>• <strong>Audit existant:</strong> Analyse de votre image actuelle<br/>• <strong>Stratégie évolution:</strong> Conservation éléments forts<br/>• <strong>Transition graduelle:</strong> Migration sans perdre notoriété<br/>• <strong>Déclinaison complète:</strong> Tous supports mis à jour<br/>Accompagnement changement avec vos équipes.",
+      category: "Rebranding"
     }
   ];
 
@@ -254,6 +297,56 @@ const ServiceGraphics = () => {
         </div>
       </WavyBackground>
 
+      {/* Location Coverage Section */}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6">
+              Nos Services de Design Graphique dans Tout le Maroc
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              <strong>BrandHub.ma</strong> accompagne les entreprises marocaines avec des services de 
+              <span className="text-primary font-semibold"> design graphique professionnels</span> dans les principales villes du royaume.
+            </p>
+            
+            <div className="grid md:grid-cols-3 gap-6">
+              <Card className="p-6">
+                <h3 className="font-bold text-lg mb-2">🏙️ Grandes Métropoles</h3>
+                <p className="text-muted-foreground">
+                  <strong>Casablanca</strong> (centre économique), <strong>Rabat</strong> (capitale), 
+                  <strong>Marrakech</strong> (tourisme), <strong>Fès</strong> (industrie)
+                </p>
+              </Card>
+              
+              <Card className="p-6">
+                <h3 className="font-bold text-lg mb-2">🌊 Villes Côtières</h3>
+                <p className="text-muted-foreground">
+                  <strong>Tanger</strong> (port), <strong>Agadir</strong> (pêche), 
+                  <strong>Essaouira</strong>, <strong>El Jadida</strong>, <strong>Kenitra</strong>
+                </p>
+              </Card>
+              
+              <Card className="p-6">
+                <h3 className="font-bold text-lg mb-2">🏔️ Autres Régions</h3>
+                <p className="text-muted-foreground">
+                  <strong>Meknès</strong>, <strong>Oujda</strong>, <strong>Tétouan</strong>, 
+                  <strong>Beni Mellal</strong>, <strong>Khouribga</strong> et plus
+                </p>
+              </Card>
+            </div>
+            
+            <div className="mt-8 p-6 bg-primary/5 rounded-lg border-l-4 border-primary">
+              <h4 className="font-bold text-lg mb-2">✅ Service Personnalisé par Région</h4>
+              <p className="text-muted-foreground">
+                Que vous soyez à Casablanca ou dans une ville plus petite, nous adaptons nos services 
+                aux spécificités locales de votre marché. <strong>Déplacement possible</strong> ou 
+                <strong> services 100% en ligne</strong> selon vos préférences.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto justify-items-center">
@@ -283,6 +376,113 @@ const ServiceGraphics = () => {
       </section>
 
       <ProcessSection steps={processSteps} accentColor="purple" />
+
+      {/* Trust Signals Section */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
+              Pourquoi Choisir BrandHub.ma pour vos Projets Design Graphique?
+            </h2>
+            
+            <div className="grid md:grid-cols-4 gap-6">
+              <Card className="p-6 text-center shadow-card">
+                <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle className="w-8 h-8 text-green-600" />
+                </div>
+                <h3 className="font-bold text-lg mb-2">200+ Projets</h3>
+                <p className="text-muted-foreground text-sm">
+                  Réalisés depuis 2020 avec un taux de satisfaction de 98%
+                </p>
+              </Card>
+              
+              <Card className="p-6 text-center shadow-card">
+                <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4">
+                  <Award className="w-8 h-8 text-blue-600" />
+                </div>
+                <h3 className="font-bold text-lg mb-2">Designers Certifiés</h3>
+                <p className="text-muted-foreground text-sm">
+                  Équipe créative avec certifications Adobe et formations design
+                </p>
+              </Card>
+              
+              <Card className="p-6 text-center shadow-card">
+                <div className="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center mx-auto mb-4">
+                  <Globe className="w-8 h-8 text-purple-600" />
+                </div>
+                <h3 className="font-bold text-lg mb-2">Support Bilingue</h3>
+                <p className="text-muted-foreground text-sm">
+                  Service client en français et arabe, adapté au marché marocain
+                </p>
+              </Card>
+              
+              <Card className="p-6 text-center shadow-card">
+                <div className="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center mx-auto mb-4">
+                  <Shield className="w-8 h-8 text-orange-600" />
+                </div>
+                <h3 className="font-bold text-lg mb-2">Garantie Satisfaction</h3>
+                <p className="text-muted-foreground text-sm">
+                  Révisions illimitées jusqu'à votre satisfaction complète
+                </p>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section for Graphics Services */}
+      <EnhancedFAQ 
+        faqs={graphicsFAQs}
+        title="Questions Fréquentes - Design Graphique Maroc"
+        description="Tout savoir sur nos services de création graphique et identité visuelle au Maroc"
+        pageType="service"
+      />
+
+      {/* Related Services */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
+              Services Complémentaires
+            </h2>
+            
+            <div className="grid md:grid-cols-3 gap-6">
+              <Card className="p-6 hover:shadow-lg transition-shadow">
+                <Code className="w-10 h-10 text-primary mb-4" />
+                <h3 className="font-bold text-lg mb-2">Développement Web</h3>
+                <p className="text-muted-foreground text-sm mb-4">
+                  Donnez vie à vos designs avec nos solutions web sur mesure
+                </p>
+                <Button size="sm" variant="outline" asChild>
+                  <Link to="/services/programming">En savoir plus</Link>
+                </Button>
+              </Card>
+              
+              <Card className="p-6 hover:shadow-lg transition-shadow">
+                <PenTool className="w-10 h-10 text-primary mb-4" />
+                <h3 className="font-bold text-lg mb-2">Création de Contenu</h3>
+                <p className="text-muted-foreground text-sm mb-4">
+                  Alimentez votre identité visuelle avec du contenu engageant
+                </p>
+                <Button size="sm" variant="outline" asChild>
+                  <Link to="/services/content">En savoir plus</Link>
+                </Button>
+              </Card>
+              
+              <Card className="p-6 hover:shadow-lg transition-shadow">
+                <BarChart3 className="w-10 h-10 text-primary mb-4" />
+                <h3 className="font-bold text-lg mb-2">Conseil Business</h3>
+                <p className="text-muted-foreground text-sm mb-4">
+                  Optimisez votre stratégie de marque avec nos analyses
+                </p>
+                <Button size="sm" variant="outline" asChild>
+                  <Link to="/services/business">En savoir plus</Link>
+                </Button>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <CTASection />
       <Footer />

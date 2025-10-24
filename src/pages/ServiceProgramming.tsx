@@ -5,10 +5,13 @@ import { supabase } from "@/integrations/supabase/client";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
+import EnhancedFAQ from "@/components/EnhancedFAQ";
 import GlassCard from "@/components/ui/glass-card";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { WavyBackground } from "@/components/ui/wavy-background";
-import { Code, Smartphone, Monitor, Bot, Shield, ShoppingCart, Map, Cpu } from "lucide-react";
+import { Code, Smartphone, Monitor, Bot, Shield, ShoppingCart, Map, Cpu, CheckCircle, Award, Globe, Palette, PenTool, BarChart3, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface Service {
   id: string;
@@ -95,6 +98,45 @@ const ServiceProgramming = () => {
   ];
 
   const displayServices = services.length > 0 ? services : fallbackServices;
+
+  // FAQ Data for Programming Page
+  const programmingFAQs = [
+    {
+      question: "Combien de temps faut-il pour développer un site web au Maroc?",
+      answer: "Les délais varient selon la complexité:<br/>• <strong>Site vitrine:</strong> 2-3 semaines<br/>• <strong>E-commerce:</strong> 4-6 semaines<br/>• <strong>Application web:</strong> 6-12 semaines<br/>Nous respectons toujours les délais convenus avec un suivi projet en temps réel.",
+      category: "Délais & Planning"
+    },
+    {
+      question: "Quelles technologies utilisez-vous pour le développement web?",
+      answer: "Nous utilisons les technologies les plus modernes:<br/>• <strong>Frontend:</strong> React, TypeScript, Next.js<br/>• <strong>Backend:</strong> Node.js, Python, PHP<br/>• <strong>E-commerce:</strong> WooCommerce, Shopify, Magento<br/>• <strong>Mobile:</strong> React Native, Flutter<br/>Toutes nos solutions sont évolutives et maintenables.",
+      category: "Technologies"
+    },
+    {
+      question: "Proposez-vous la maintenance après livraison?",
+      answer: "Oui, nous offrons plusieurs formules de maintenance:<br/>• <strong>Maintenance de base:</strong> Mises à jour sécurité, sauvegardes<br/>• <strong>Maintenance premium:</strong> Modifications mineures, support prioritaire<br/>• <strong>Maintenance complète:</strong> Évolutions, nouvelles fonctionnalités<br/>Support technique en français et arabe disponible.",
+      category: "Maintenance"
+    },
+    {
+      question: "Travaillez-vous avec des entreprises dans toutes les villes du Maroc?",
+      answer: "Absolument! Nous servons des clients dans tout le Maroc:<br/>• <strong>Principales:</strong> Casablanca, Rabat, Marrakech, Fès, Tanger, Agadir<br/>• <strong>Autres villes:</strong> Meknès, Oujda, Kenitra, Tétouan, Salé<br/>Services 100% en ligne ou déplacement possible selon vos besoins.",
+      category: "Couverture Géographique"
+    },
+    {
+      question: "Vos sites sont-ils optimisés pour les moteurs de recherche?",
+      answer: "Tous nos sites incluent un SEO technique de base:<br/>• <strong>Performance:</strong> Optimisation vitesse de chargement<br/>• <strong>Mobile-first:</strong> Design responsive parfait<br/>• <strong>Structure:</strong> Balises HTML sémantiques<br/>• <strong>Local SEO:</strong> Optimisation pour Google.ma<br/>Service SEO avancé disponible en complément.",
+      category: "SEO & Performance"
+    },
+    {
+      question: "Comment gérez-vous les paiements en ligne au Maroc?",
+      answer: "Nous intégrons toutes les solutions de paiement locales:<br/>• <strong>CMI:</strong> Standard bancaire marocain<br/>• <strong>CashPlus:</strong> Paiement mobile populaire<br/>• <strong>PayPal:</strong> Pour ventes internationales<br/>• <strong>Orange Money / Inwi Money:</strong> Mobile money<br/>Tous certifiés et sécurisés selon standards internationaux.",
+      category: "Paiements"
+    },
+    {
+      question: "Fournissez-vous une formation pour gérer le site?",
+      answer: "Formation complète incluse dans tous nos projets:<br/>• <strong>Session personnalisée:</strong> 2h de formation individuelle<br/>• <strong>Documentation:</strong> Guides utilisateur en français<br/>• <strong>Vidéos:</strong> Tutoriels d'utilisation<br/>• <strong>Support:</strong> Questions illimitées pendant 3 mois<br/>Formation adaptée au niveau de votre équipe.",
+      category: "Formation"
+    }
+  ];
 
   return (
     <div className="min-h-screen">
@@ -233,6 +275,56 @@ const ServiceProgramming = () => {
         </div>
       </WavyBackground>
 
+      {/* Location Coverage Section */}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6">
+              Nos Services de Développement Web dans Tout le Maroc
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              <strong>BrandHub.ma</strong> accompagne les entreprises marocaines avec des services de 
+              <span className="text-primary font-semibold"> développement web professionnels</span> dans les principales villes du royaume.
+            </p>
+            
+            <div className="grid md:grid-cols-3 gap-6">
+              <Card className="p-6">
+                <h3 className="font-bold text-lg mb-2">🏙️ Grandes Métropoles</h3>
+                <p className="text-muted-foreground">
+                  <strong>Casablanca</strong> (centre économique), <strong>Rabat</strong> (capitale), 
+                  <strong>Marrakech</strong> (tourisme), <strong>Fès</strong> (industrie)
+                </p>
+              </Card>
+              
+              <Card className="p-6">
+                <h3 className="font-bold text-lg mb-2">🌊 Villes Côtières</h3>
+                <p className="text-muted-foreground">
+                  <strong>Tanger</strong> (port), <strong>Agadir</strong> (pêche), 
+                  <strong>Essaouira</strong>, <strong>El Jadida</strong>, <strong>Kenitra</strong>
+                </p>
+              </Card>
+              
+              <Card className="p-6">
+                <h3 className="font-bold text-lg mb-2">🏔️ Autres Régions</h3>
+                <p className="text-muted-foreground">
+                  <strong>Meknès</strong>, <strong>Oujda</strong>, <strong>Tétouan</strong>, 
+                  <strong>Beni Mellal</strong>, <strong>Khouribga</strong> et plus
+                </p>
+              </Card>
+            </div>
+            
+            <div className="mt-8 p-6 bg-primary/5 rounded-lg border-l-4 border-primary">
+              <h4 className="font-bold text-lg mb-2">✅ Service Personnalisé par Région</h4>
+              <p className="text-muted-foreground">
+                Que vous soyez à Casablanca ou dans une ville plus petite, nous adaptons nos services 
+                aux spécificités locales de votre marché. <strong>Déplacement possible</strong> ou 
+                <strong> services 100% en ligne</strong> selon vos préférences.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Grid */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
@@ -290,6 +382,113 @@ const ServiceProgramming = () => {
                   </CardContent>
                 </Card>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Signals Section */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
+              Pourquoi Choisir BrandHub.ma pour vos Projets Développement Web?
+            </h2>
+            
+            <div className="grid md:grid-cols-4 gap-6">
+              <Card className="p-6 text-center shadow-card">
+                <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle className="w-8 h-8 text-green-600" />
+                </div>
+                <h3 className="font-bold text-lg mb-2">200+ Projets</h3>
+                <p className="text-muted-foreground text-sm">
+                  Réalisés depuis 2020 avec un taux de satisfaction de 98%
+                </p>
+              </Card>
+              
+              <Card className="p-6 text-center shadow-card">
+                <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4">
+                  <Award className="w-8 h-8 text-blue-600" />
+                </div>
+                <h3 className="font-bold text-lg mb-2">Équipe Certifiée</h3>
+                <p className="text-muted-foreground text-sm">
+                  Certifications Google Analytics, Ads et développement web
+                </p>
+              </Card>
+              
+              <Card className="p-6 text-center shadow-card">
+                <div className="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center mx-auto mb-4">
+                  <Globe className="w-8 h-8 text-purple-600" />
+                </div>
+                <h3 className="font-bold text-lg mb-2">Support Bilingue</h3>
+                <p className="text-muted-foreground text-sm">
+                  Service client en français et arabe, adapté au marché marocain
+                </p>
+              </Card>
+              
+              <Card className="p-6 text-center shadow-card">
+                <div className="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center mx-auto mb-4">
+                  <Shield className="w-8 h-8 text-orange-600" />
+                </div>
+                <h3 className="font-bold text-lg mb-2">Garantie Satisfaction</h3>
+                <p className="text-muted-foreground text-sm">
+                  Révisions illimitées jusqu'à votre satisfaction complète
+                </p>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section for Programming Services */}
+      <EnhancedFAQ 
+        faqs={programmingFAQs}
+        title="Questions Fréquentes - Développement Web Maroc"
+        description="Réponses aux questions les plus posées sur nos services de développement web au Maroc"
+        pageType="service"
+      />
+
+      {/* Related Services */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
+              Services Complémentaires
+            </h2>
+            
+            <div className="grid md:grid-cols-3 gap-6">
+              <Card className="p-6 hover:shadow-lg transition-shadow">
+                <Palette className="w-10 h-10 text-primary mb-4" />
+                <h3 className="font-bold text-lg mb-2">Design Graphique</h3>
+                <p className="text-muted-foreground text-sm mb-4">
+                  Créez une identité visuelle forte avec nos services de design
+                </p>
+                <Button size="sm" variant="outline" asChild>
+                  <Link to="/services/graphics">En savoir plus</Link>
+                </Button>
+              </Card>
+              
+              <Card className="p-6 hover:shadow-lg transition-shadow">
+                <PenTool className="w-10 h-10 text-primary mb-4" />
+                <h3 className="font-bold text-lg mb-2">Création de Contenu</h3>
+                <p className="text-muted-foreground text-sm mb-4">
+                  Alimentez votre site avec du contenu engageant et optimisé
+                </p>
+                <Button size="sm" variant="outline" asChild>
+                  <Link to="/services/content">En savoir plus</Link>
+                </Button>
+              </Card>
+              
+              <Card className="p-6 hover:shadow-lg transition-shadow">
+                <BarChart3 className="w-10 h-10 text-primary mb-4" />
+                <h3 className="font-bold text-lg mb-2">Conseil Business</h3>
+                <p className="text-muted-foreground text-sm mb-4">
+                  Optimisez votre stratégie avec nos analyses de données
+                </p>
+                <Button size="sm" variant="outline" asChild>
+                  <Link to="/services/business">En savoir plus</Link>
+                </Button>
+              </Card>
             </div>
           </div>
         </div>
