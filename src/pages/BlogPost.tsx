@@ -222,7 +222,6 @@ const BlogPost = () => {
               description={post.excerpt || cleanContent}
             />
           </div>
-          </div>
 
           {/* Featured Image */}
           <div className="aspect-video mb-12 rounded-2xl overflow-hidden shadow-elegant animate-fade-in">
