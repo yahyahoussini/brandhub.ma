@@ -147,32 +147,62 @@ const BlogPost = () => {
         <meta name="twitter:description" content={post?.excerpt || cleanContent} />
         <meta name="twitter:image" content={post?.image_url || 'https://brandhub.ma/favicone.png'} />
         
-        {/* Article Schema */}
+        {/* Enhanced Article Schema for AEO */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
             "headline": post?.title,
             "description": post?.excerpt || cleanContent,
-            "image": post?.image_url,
+            "image": post?.image_url || 'https://brandhub.ma/favicone.png',
             "datePublished": post?.published_at,
-            "dateModified": post?.published_at,
+            "dateModified": post?.updated_at || post?.published_at,
             "author": {
-              "@type": "Organization",
-              "name": "BrandHub.ma",
-              "url": "https://brandhub.ma"
+              "@type": "Person",
+              "name": "Yahya Houssini",
+              "jobTitle": "CEO & Lead Developer",
+              "url": "https://brandhub.ma/about",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "BrandHub.ma",
+                "url": "https://brandhub.ma"
+              }
             },
             "publisher": {
               "@type": "Organization",
               "name": "BrandHub.ma",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://brandhub.ma/favicone.png"
-              }
+                "url": "https://brandhub.ma/favicone.png",
+                "width": 512,
+                "height": 512
+              },
+              "url": "https://brandhub.ma"
             },
             "mainEntityOfPage": {
               "@type": "WebPage",
               "@id": currentUrl
+            },
+            "wordCount": post?.content?.split(' ').length || 1000,
+            "articleSection": post?.category,
+            "inLanguage": "fr-MA",
+            "about": {
+              "@type": "Thing",
+              "name": post?.category
+            },
+            "isAccessibleForFree": true,
+            "keywords": post?.tags?.join(', ') || post?.category
+          })}
+        </script>
+        
+        {/* Speakable Schema for Voice Search */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", "h2", ".prose"]
             }
           })}
         </script>

@@ -49,6 +49,7 @@ export const BreadcrumbSchema = () => {
   const location = useLocation();
   const breadcrumbs = getBreadcrumbs(location.pathname);
 
+  // Enhanced breadcrumb schema for AEO
   const schema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -56,7 +57,12 @@ export const BreadcrumbSchema = () => {
       "@type": "ListItem",
       "position": index + 1,
       "name": item.name,
-      "item": item.url
+      "item": {
+        "@type": "WebPage",
+        "@id": item.url,
+        "url": item.url,
+        "name": item.name
+      }
     }))
   };
 

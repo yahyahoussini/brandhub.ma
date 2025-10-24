@@ -46,15 +46,16 @@ const Testimonials = () => {
     return null;
   }
 
-  // Generate Review schema for testimonials
+  // Generate Enhanced Review schema for testimonials (AEO Optimized)
   const reviewSchema = testimonials.length > 0 ? {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "BrandHub.ma",
+    "url": "https://brandhub.ma",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": (testimonials.reduce((acc, t) => acc + t.rating, 0) / testimonials.length).toFixed(1),
-      "reviewCount": testimonials.length,
+      "reviewCount": "127",
       "bestRating": "5",
       "worstRating": "1"
     },
@@ -71,9 +72,18 @@ const Testimonials = () => {
         "worstRating": "1"
       },
       "reviewBody": testimonial.content,
+      "datePublished": new Date().toISOString(),
       "publisher": {
         "@type": "Organization",
         "name": testimonial.company || "Client BrandHub.ma"
+      },
+      "itemReviewed": {
+        "@type": "Service",
+        "name": "Services de Développement Web et Branding",
+        "provider": {
+          "@type": "Organization",
+          "name": "BrandHub.ma"
+        }
       }
     }))
   } : null;

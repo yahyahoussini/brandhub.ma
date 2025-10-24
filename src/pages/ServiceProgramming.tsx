@@ -133,6 +133,71 @@ const ServiceProgramming = () => {
             }
           })}
         </script>
+        
+        {/* HowTo Schema for Development Process (AEO) */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": "Comment nous créons votre site web professionnel au Maroc",
+            "description": "Notre processus de développement web professionnel en 5 étapes garantit qualité et satisfaction",
+            "totalTime": "PT4W",
+            "estimatedCost": {
+              "@type": "MonetaryAmount",
+              "currency": "MAD",
+              "value": "5000"
+            },
+            "step": [
+              {
+                "@type": "HowToStep",
+                "position": 1,
+                "name": "Consultation & Analyse",
+                "text": "Nous analysons vos besoins, objectifs business et budget pour créer une stratégie de développement sur mesure adaptée à votre entreprise au Maroc",
+                "url": "https://brandhub.ma/services/programming#consultation"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 2,
+                "name": "Design & Maquettes",
+                "text": "Création de maquettes UX/UI et wireframes professionnels pour validation avant le développement, garantissant que le design correspond parfaitement à votre vision",
+                "url": "https://brandhub.ma/services/programming#design"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 3,
+                "name": "Développement",
+                "text": "Développement avec technologies modernes (React, TypeScript, WordPress, etc.) suivant les meilleures pratiques et standards de sécurité",
+                "url": "https://brandhub.ma/services/programming#development"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 4,
+                "name": "Tests & Optimisation",
+                "text": "Tests complets sur tous les navigateurs et appareils, optimisation des performances, SEO et sécurité avant le lancement",
+                "url": "https://brandhub.ma/services/programming#testing"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 5,
+                "name": "Lancement & Support",
+                "text": "Mise en ligne professionnelle, formation complète de votre équipe et support technique continu après livraison",
+                "url": "https://brandhub.ma/services/programming#launch"
+              }
+            ]
+          })}
+        </script>
+        
+        {/* Speakable Schema for Voice Search */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", "h2", ".service-description"]
+            }
+          })}
+        </script>
       </Helmet>
       <Navbar />
       
