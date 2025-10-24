@@ -11,10 +11,121 @@ const LocationMorocco = () => {
   return (
     <>
       <Helmet>
-        <title>Agence Web Maroc | Développement Web & Branding à Casablanca, Rabat, Marrakech</title>
-        <meta name="description" content="Agence de développement web au Maroc spécialisée en branding, design graphique et marketing digital. Services pour PME à Casablanca, Rabat, Marrakech et partout au Maroc." />
-        <meta name="keywords" content="agence web maroc, développement web maroc, branding maroc, design graphique maroc, marketing digital maroc, création site web casablanca, agence digitale rabat, developpeur web marrakech" />
-        <link rel="canonical" href="https://yourdomain.com/maroc" />
+        <title>Agence Web Casablanca & Maroc | Développement Site Internet Pro 2024 | BrandHub.ma</title>
+        <meta name="description" content="🥇 Agence web #1 au Maroc. Développement sites web professionnels, e-commerce et apps à Casablanca, Rabat, Marrakech. +200 clients satisfaits. Prix compétitifs dès 3000 MAD. Devis gratuit!" />
+        <meta name="keywords" content="agence web casablanca, développement web maroc, création site web casablanca prix, agence digitale rabat, programmeur web marrakech, site e-commerce maroc, application mobile casablanca, développeur freelance maroc, agence marketing digital casablanca, برمجة مواقع الدار البيضاء, تصميم مواقع المغرب, شركة تطوير تطبيقات الرباط" />
+        
+        {/* Enhanced for Morocco Searches */}
+        <meta name="geo.region" content="MA" />
+        <meta name="geo.placename" content="Morocco" />
+        <meta name="coverage" content="Casablanca, Rabat, Marrakech, Fès, Tanger, Agadir, Meknès, Oujda, Kenitra, Tétouan, Salé, Mohammedia" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="Agence Web Casablanca & Maroc | Développement Site Internet Pro" />
+        <meta property="og:description" content="Agence web leader au Maroc. Développement web, e-commerce, apps mobiles. Casablanca, Rabat, Marrakech. +200 projets réussis." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://brandhub.ma/maroc" />
+        <meta property="og:locale" content="fr_MA" />
+        <meta property="og:locale:alternate" content="ar_MA" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Agence Web Casablanca & Maroc | BrandHub.ma" />
+        <meta name="twitter:description" content="Développement web professionnel au Maroc. Sites, e-commerce, apps. Casablanca, Rabat, Marrakech." />
+        
+        <link rel="canonical" content="https://brandhub.ma/maroc" />
+        
+        {/* Morocco-Specific LocalBusiness Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "BrandHub.ma - Agence Web Maroc",
+            "description": "Agence de développement web et branding au Maroc. Services professionnels pour entreprises à Casablanca, Rabat, Marrakech et partout au Maroc.",
+            "image": "https://brandhub.ma/favicone.png",
+            "telephone": "+212703026422",
+            "email": "contact@brandhub.ma",
+            "url": "https://brandhub.ma/maroc",
+            "priceRange": "3000-50000 MAD",
+            "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+            "currenciesAccepted": "MAD, EUR, USD",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Casablanca",
+              "addressRegion": "Casablanca-Settat",
+              "addressCountry": "MA"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "33.5731",
+              "longitude": "-7.5898"
+            },
+            "areaServed": [
+              {"@type": "City", "name": "Casablanca", "sameAs": "https://en.wikipedia.org/wiki/Casablanca"},
+              {"@type": "City", "name": "Rabat", "sameAs": "https://en.wikipedia.org/wiki/Rabat"},
+              {"@type": "City", "name": "Marrakech", "sameAs": "https://en.wikipedia.org/wiki/Marrakech"},
+              {"@type": "City", "name": "Fès", "sameAs": "https://en.wikipedia.org/wiki/Fez,_Morocco"},
+              {"@type": "City", "name": "Tanger", "sameAs": "https://en.wikipedia.org/wiki/Tangier"},
+              {"@type": "City", "name": "Agadir", "sameAs": "https://en.wikipedia.org/wiki/Agadir"}
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Services de Développement Web au Maroc",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Développement Site Web Maroc",
+                    "description": "Création de sites web professionnels au Maroc"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "E-commerce Maroc",
+                    "description": "Boutiques en ligne WooCommerce et Shopify au Maroc"
+                  }
+                }
+              ]
+            }
+          })}
+        </script>
+        
+        {/* FAQ Schema for Morocco */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Où se trouve votre agence web au Maroc?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "BrandHub.ma est basée à Casablanca avec présence à Rabat et Marrakech. Nous offrons nos services de développement web dans toutes les villes du Maroc: Fès, Tanger, Agadir, Meknès, Oujda, Kenitra, Tétouan et plus."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Quels sont vos tarifs pour un site web au Maroc?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Nos tarifs au Maroc: Site vitrine dès 3000 MAD, E-commerce dès 8000 MAD, Application mobile dès 15000 MAD. Prix tout compris avec hébergement et maintenance. Devis gratuit sous 24h."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Travaillez-vous avec des entreprises dans toutes les villes du Maroc?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Oui, BrandHub.ma travaille avec des entreprises partout au Maroc: Casablanca, Rabat, Marrakech, Fès, Tanger, Agadir, Meknès, Oujda et toutes les autres villes. Nous offrons services en ligne et déplacements sur site."
+                }
+              }
+            ]
+          })}
+        </script>
       </Helmet>
 
       <div className="min-h-screen">
