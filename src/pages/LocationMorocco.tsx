@@ -448,7 +448,7 @@ const LocationMorocco = () => {
 
               <p className="text-lg text-muted-foreground">
                 Agence de développement web et branding au service des entreprises marocaines depuis plusieurs années. 
-                Transformez votre présence digitale au Maroc avec nos solutions professionnelles. 
+                Transformez votre présence digitale au Maroc avec nos solutions professionnelles.
                 <Link to="/about" className="text-primary hover:underline">Découvrez notre histoire</Link> et 
                 <Link to="/blog" className="text-primary hover:underline">consultez nos articles spécialisés</Link> pour en savoir plus.
               </p>
