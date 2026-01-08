@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="fr-MA">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#11118b" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#5b61eb" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="/favicone.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/favicone.png" />
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Critical Resource Hints for Performance -->
+    <link rel="preconnect" href="https://oxiyfnlhalptsdydlbmz.supabase.co" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect" href="https://prod.spline.design" crossorigin />
+    <link rel="preconnect" href="https://unpkg.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+    <link rel="dns-prefetch" href="https://region1.analytics.google.com" />
+    <link rel="dns-prefetch" href="https://raw.githubusercontent.com" />
+    <link rel="dns-prefetch" href="https://wa.me" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    
+    <!-- Preload critical assets for faster initial load -->
+    <!-- Note: Vite handles modulepreload automatically during build -->
+    <link rel="preload" as="image" href="/favicone.png" />
+    
+    <!-- Primary Meta Tags -->
+    <title>BrandHub.ma - Agence Digitale Premium au Maroc & Afrique | Développement Web, Design & Marketing</title>
+    <meta name="title" content="BrandHub.ma - Agence Digitale Premium au Maroc & Afrique | Développement Web, Design & Marketing" />
+    <meta name="description" content="BrandHub - Leading branding agency in Morocco, Africa, Middle East & Europe. Expert brand identity design, digital marketing & creative solutions. Professional services in Casablanca, Spain, Saudi Arabia & across global markets." />
+    <meta name="author" content="BrandHub.ma" />
+    <meta name="keywords" content="agence web maroc, développement web casablanca, création site web maroc prix, agence digitale rabat, programmeur web marrakech, site e-commerce maroc, application mobile maroc, développeur freelance casablanca, agence marketing digital maroc, برمجة مواقع المغرب, تصميم مواقع الدار البيضاء, شركة تطوير تطبيقات المغرب, وكالة تسويق رقمي الرباط, agence web casablanca prix, développement wordpress maroc, création logo maroc, référencement seo maroc, hébergement web maroc, site internet maroc, développement mobile casablanca, web design maroc, agence digitale casablanca, programmation sur mesure maroc, boutique en ligne maroc, application ios android maroc, marketing digital casablanca, réseaux sociaux maroc, publicité google ads maroc, branding agency Morocco, brand identity design Morocco, digital marketing Morocco, agence créative Morocco, conception de logo Morocco, design graphique casablanca, stratégie de marque Morocco, agence de branding Algeria, agence de branding Tunisia, branding agency Spain, branding agency Saudi Arabia, وكالة العلامات التجارية Morocco, وكالة إبداعية Morocco, هوية العلامة التجارية Morocco, تصميم الشعار Morocco, التسويق الرقمي Morocco, agence digitale afrique, développement web afrique" />
+    
+    <!-- Enhanced Geo Targeting for Morocco -->
+    <meta name="geo.region" content="MA-CAS" />
+    <meta name="geo.placename" content="Casablanca, Morocco" />
+    <meta name="geo.position" content="33.5731;-7.5898" />
+    <meta name="ICBM" content="33.5731, -7.5898" />
+    <meta name="coverage" content="Morocco, Casablanca, Rabat, Marrakech, Fès, Tanger, Agadir" />
+    <meta name="distribution" content="global" />
+    <meta name="target" content="Morocco, MA, Casablanca, Rabat, Marrakech" />
+    <meta name="audience" content="Morocco businesses, Moroccan companies, PME Maroc, entreprises marocaines" />
+    <meta name="city" content="Casablanca" />
+    <meta name="country" content="Morocco" />
+    
+    <!-- Language & Locale -->
+    <meta http-equiv="content-language" content="fr-MA" />
+    <link rel="alternate" hreflang="fr-ma" href="https://brandhub.ma/" />
+    <link rel="alternate" hreflang="fr" href="https://brandhub.ma/" />
+    <link rel="alternate" hreflang="ar-ma" href="https://brandhub.ma/" />
+    <link rel="alternate" hreflang="x-default" href="https://brandhub.ma/" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://brandhub.ma/" />
+    <meta property="og:title" content="BrandHub.ma - Agence Digitale Premium au Maroc & Afrique" />
+    <meta property="og:description" content="BrandHub - Premier branding agency across Morocco, Africa, Middle East & Europe. Expert brand identity, digital marketing & creative design solutions. Transform your vision into reality." />
+    <meta property="og:image" content="https://brandhub.ma/favicone.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image:alt" content="BrandHub.ma Logo - Agence Digitale Premium" />
+    <meta property="og:locale" content="fr_MA" />
+    <meta property="og:locale:alternate" content="ar_MA" />
+    <meta property="og:site_name" content="BrandHub.ma" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://brandhub.ma/" />
+    <meta name="twitter:title" content="BrandHub.ma - Agence Digitale Premium au Maroc & Afrique" />
+    <meta name="twitter:description" content="BrandHub - Leading branding agency in Morocco, Africa, Middle East & Europe. Expert brand identity design & digital marketing solutions." />
+    <meta name="twitter:image" content="https://brandhub.ma/favicone.png" />
+    <meta name="twitter:image:alt" content="BrandHub.ma Logo - Agence Digitale Premium" />
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://brandhub.ma/" />
+    
+    <!-- Robots -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    
+    <!-- Enhanced Structured Data - Organization (AEO Optimized) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "BrandHub.ma",
+      "url": "https://brandhub.ma",
+      "logo": "https://brandhub.ma/favicone.png",
+      "image": "https://brandhub.ma/favicone.png",
+      "description": "Premier branding agency across Morocco, Africa, Middle East and Europe. Specialized in brand identity design, digital marketing, and creative solutions for global businesses.",
+      "foundingDate": "2020-01-01",
+      "slogan": "Transform Your Vision Into Digital Reality",
+      "numberOfEmployees": {
+        "@type": "QuantitativeValue",
+        "value": 12
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Boulevard Zerktouni",
+        "addressLocality": "Casablanca",
+        "addressRegion": "Casablanca-Settat",
+        "postalCode": "20000",
+        "addressCountry": "MA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "33.5731",
+        "longitude": "-7.5898"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Yahya Houssini",
+        "jobTitle": "CEO & Lead Developer",
+        "nationality": "Moroccan",
+        "alumniOf": "École Nationale Supérieure d'Informatique et d'Analyse des Systèmes",
+        "hasCredential": [
+          "Google Analytics Certified Professional",
+          "Google Ads Certified",
+          "Meta Blueprint Certified"
+        ],
+        "knowsAbout": [
+          "Web Development",
+          "React Development",
+          "TypeScript",
+          "Digital Marketing",
+          "SEO Optimization",
+          "E-commerce Solutions"
+        ]
+      },
+      "knowsAbout": [
+        "Web Development Morocco",
+        "Digital Marketing Morocco",
+        "E-commerce Solutions",
+        "Mobile App Development",
+        "Brand Identity Design",
+        "SEO Optimization",
+        "UI/UX Design"
+      ],
+      "award": [
+        "Top Web Agency Morocco 2023",
+        "Best Digital Marketing Agency Casablanca 2024"
+      ],
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Morocco"
+        },
+        {
+          "@type": "Country",
+          "name": "Spain"
+        },
+        {
+          "@type": "Country",
+          "name": "Saudi Arabia"
+        },
+        {
+          "@type": "Country",
+          "name": "Germany"
+        },
+        {
+          "@type": "Country",
+          "name": "Italy"
+        },
+        {
+          "@type": "Continent",
+          "name": "Africa"
+        },
+        {
+          "@type": "Continent",
+          "name": "Europe"
+        }
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+212-703-026-422",
+        "contactType": "customer service",
+        "email": "contact@brandhub.ma",
+        "availableLanguage": ["French", "Arabic", "English", "Spanish", "German", "Italian"],
+        "areaServed": "MA"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "127",
+        "bestRating": "5"
+      },
+      "sameAs": [
+        "https://www.instagram.com/brandhub.ma/",
+        "https://www.linkedin.com/company/brandhub-ma/",
+        "https://www.reddit.com/r/BrandHUB_maroc"
+      ]
+    }
+    </script>
+    
+    <!-- Structured Data - Local Business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "BrandHub.ma",
+      "image": "https://brandhub.ma/favicone.png",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Casablanca",
+        "addressCountry": "Morocco"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 33.5731,
+        "longitude": -7.5898
+      },
+      "url": "https://brandhub.ma",
+      "telephone": "+212703026422",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    }
+    </script>
+    
+    <!-- Structured Data - FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quels services propose BrandHub.ma?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "BrandHub.ma propose des services complets de développement web, design graphique, création de contenu et solutions business. Nous créons des sites web sur mesure, des identités visuelles, des stratégies marketing digital et des solutions e-commerce pour les entreprises au Maroc et en Afrique."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Où est situé BrandHub.ma?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "BrandHub.ma est basé à Casablanca, Maroc, et dessert des clients à travers le Maroc (Casablanca, Rabat, Marrakech), l'Afrique, le Moyen-Orient et l'Europe. Nous offrons des services à distance pour tous nos clients internationaux."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien de temps faut-il pour créer un site web?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le délai de création d'un site web varie selon la complexité du projet. Un site vitrine standard prend 2-3 semaines, tandis qu'un site e-commerce ou une application web complexe peut prendre 6-12 semaines. Nous fournissons un calendrier détaillé lors de la consultation initiale."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelles technologies utilisez-vous?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nous utilisons les technologies web modernes incluant React, TypeScript, Node.js, Next.js, TailwindCSS, PostgreSQL, Firebase, et plus. Nous choisissons la stack technologique optimale pour chaque projet selon vos besoins spécifiques."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Offrez-vous un support après la livraison?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, nous offrons un support technique complet après la livraison. Tous nos projets incluent une période de garantie, et nous proposons des forfaits de maintenance mensuels pour assurer la performance optimale et la sécurité de votre site web."
+          }
+        }
+      ]
+    }
+    </script>
+  </head>
+
+  <body>
+    <noscript>
+      <div style="text-align: center; padding: 2rem; font-family: system-ui, sans-serif;">
+        <h1>JavaScript est requis</h1>
+        <p>Pour une expérience optimale, veuillez activer JavaScript dans votre navigateur.</p>
+      </div>
+    </noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Google Analytics - Loaded after main content for better performance -->
+    <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-WDSM9FDJDH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-WDSM9FDJDH');
+    </script>
+    
+    <!-- PWA Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>
