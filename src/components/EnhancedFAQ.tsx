@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, ChevronUp } from "lucide-react";
@@ -18,9 +18,9 @@ interface EnhancedFAQProps {
   pageType?: 'homepage' | 'service' | 'location';
 }
 
-export const EnhancedFAQ = ({ 
-  faqs, 
-  title = "Questions Fréquemment Posées", 
+export const EnhancedFAQ = ({
+  faqs,
+  title = "Questions Fréquemment Posées",
   description = "Trouvez rapidement les réponses à vos questions sur nos services.",
   pageType = 'service'
 }: EnhancedFAQProps) => {
@@ -51,7 +51,7 @@ export const EnhancedFAQ = ({
           {JSON.stringify(faqSchema)}
         </script>
       </Helmet>
-      
+
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
@@ -66,8 +66,8 @@ export const EnhancedFAQ = ({
 
             <div className="space-y-4">
               {faqs.map((faq, index) => (
-                <Card 
-                  key={index} 
+                <Card
+                  key={index}
                   className="shadow-card hover:shadow-elegant transition-shadow"
                 >
                   <CardContent className="p-0">
@@ -86,20 +86,20 @@ export const EnhancedFAQ = ({
                           </span>
                         )}
                       </div>
-                      
+
                       {openIndex === index ? (
                         <ChevronUp className="w-5 h-5 text-muted-foreground" />
                       ) : (
                         <ChevronDown className="w-5 h-5 text-muted-foreground" />
                       )}
                     </Button>
-                    
+
                     <div className={cn(
                       "overflow-hidden transition-all duration-300",
                       openIndex === index ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                     )}>
                       <div className="px-6 pb-6">
-                        <div 
+                        <div
                           className="text-muted-foreground leading-relaxed prose prose-sm max-w-none"
                           dangerouslySetInnerHTML={{ __html: faq.answer }}
                         />

@@ -3,7 +3,7 @@ import { Star, Quote } from "lucide-react";
 import { SparklesCore } from "./ui/sparkles";
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 interface Testimonial {
   id: string;
@@ -121,14 +121,14 @@ const Testimonials = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <Card 
-              key={testimonial.id} 
+            <Card
+              key={testimonial.id}
               className="hover-lift animate-fade-in shadow-card"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardContent className="p-8">
                 <Quote className="w-10 h-10 text-accent mb-4 opacity-50" />
-                
+
                 <div className="flex mb-4" role="img" aria-label={`Note: ${testimonial.rating} sur 5 étoiles`}>
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 fill-accent text-accent" aria-hidden="true" />
