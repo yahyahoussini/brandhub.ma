@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { supabase } from "@/integrations/supabase/client";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -144,18 +144,18 @@ const ServiceProgramming = () => {
         <title>Développement Web & Applications | BrandHub.ma</title>
         <meta name="description" content="Services de développement web et mobile professionnels au Maroc : sites WordPress, WooCommerce, Shopify, applications iOS/Android, IA, cybersécurité et solutions e-commerce. Agence tech innovante." />
         <meta name="keywords" content="développement web maroc, création site wordpress maroc, développement application mobile maroc, woocommerce maroc, shopify maroc, développement ios android casablanca, intelligence artificielle maroc, cybersécurité maroc, e-commerce maroc, développement logiciel maroc" />
-        
+
         <meta property="og:title" content="Développement Web & Applications | BrandHub.ma" />
         <meta property="og:description" content="Solutions technologiques innovantes : développement web, applications mobiles, IA, cybersécurité et e-commerce au Maroc et en Afrique." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://brandhub.ma/services/programming" />
-        
+
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Développement Web & Applications | BrandHub.ma" />
         <meta name="twitter:description" content="Services de développement web, applications mobiles, IA et cybersécurité au Maroc." />
-        
+
         <link rel="canonical" href="https://brandhub.ma/services/programming" />
-        
+
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -175,7 +175,7 @@ const ServiceProgramming = () => {
             }
           })}
         </script>
-        
+
         {/* HowTo Schema for Development Process (AEO) */}
         <script type="application/ld+json">
           {JSON.stringify({
@@ -228,7 +228,7 @@ const ServiceProgramming = () => {
             ]
           })}
         </script>
-        
+
         {/* Speakable Schema for Voice Search */}
         <script type="application/ld+json">
           {JSON.stringify({
@@ -242,7 +242,7 @@ const ServiceProgramming = () => {
         </script>
       </Helmet>
       <Navbar />
-      
+
       {/* Hero Section */}
       <WavyBackground
         containerClassName="pt-32 pb-20"
@@ -259,16 +259,16 @@ const ServiceProgramming = () => {
               <Code className="w-5 h-5 text-primary" />
               <span className="text-sm font-medium text-primary">Programmation & Technologie</span>
             </div>
-            
+
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               Solutions Technologiques
               <span className="block gradient-primary bg-clip-text text-transparent mt-2">
                 Innovantes et Performantes
               </span>
             </h1>
-            
+
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Du développement web aux applications mobiles, en passant par l'IA et la cybersécurité, 
+              Du développement web aux applications mobiles, en passant par l'IA et la cybersécurité,
               nous créons des solutions technologiques adaptées à vos besoins.
             </p>
           </div>
@@ -283,41 +283,41 @@ const ServiceProgramming = () => {
               Nos Services de Développement Web dans Tout le Maroc
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              <strong>BrandHub.ma</strong> accompagne les entreprises marocaines avec des services de 
+              <strong>BrandHub.ma</strong> accompagne les entreprises marocaines avec des services de
               <span className="text-primary font-semibold"> développement web professionnels</span> dans les principales villes du royaume.
             </p>
-            
+
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="p-6">
                 <h3 className="font-bold text-lg mb-2">🏙️ Grandes Métropoles</h3>
                 <p className="text-muted-foreground">
-                  <strong>Casablanca</strong> (centre économique), <strong>Rabat</strong> (capitale), 
+                  <strong>Casablanca</strong> (centre économique), <strong>Rabat</strong> (capitale),
                   <strong>Marrakech</strong> (tourisme), <strong>Fès</strong> (industrie)
                 </p>
               </Card>
-              
+
               <Card className="p-6">
                 <h3 className="font-bold text-lg mb-2">🌊 Villes Côtières</h3>
                 <p className="text-muted-foreground">
-                  <strong>Tanger</strong> (port), <strong>Agadir</strong> (pêche), 
+                  <strong>Tanger</strong> (port), <strong>Agadir</strong> (pêche),
                   <strong>Essaouira</strong>, <strong>El Jadida</strong>, <strong>Kenitra</strong>
                 </p>
               </Card>
-              
+
               <Card className="p-6">
                 <h3 className="font-bold text-lg mb-2">🏔️ Autres Régions</h3>
                 <p className="text-muted-foreground">
-                  <strong>Meknès</strong>, <strong>Oujda</strong>, <strong>Tétouan</strong>, 
+                  <strong>Meknès</strong>, <strong>Oujda</strong>, <strong>Tétouan</strong>,
                   <strong>Beni Mellal</strong>, <strong>Khouribga</strong> et plus
                 </p>
               </Card>
             </div>
-            
+
             <div className="mt-8 p-6 bg-primary/5 rounded-lg border-l-4 border-primary">
               <h4 className="font-bold text-lg mb-2">✅ Service Personnalisé par Région</h4>
               <p className="text-muted-foreground">
-                Que vous soyez à Casablanca ou dans une ville plus petite, nous adaptons nos services 
-                aux spécificités locales de votre marché. <strong>Déplacement possible</strong> ou 
+                Que vous soyez à Casablanca ou dans une ville plus petite, nous adaptons nos services
+                aux spécificités locales de votre marché. <strong>Déplacement possible</strong> ou
                 <strong> services 100% en ligne</strong> selon vos préférences.
               </p>
             </div>
@@ -330,13 +330,13 @@ const ServiceProgramming = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto justify-items-center">
             {displayServices.map((service, index) => {
-              const IconComponent = service.id 
+              const IconComponent = service.id
                 ? getIconComponent(service.icon)
                 : service.icon;
-              
+
               return (
                 <div
-                  key={service.id || index} 
+                  key={service.id || index}
                   className="animate-fade-in cursor-pointer"
                   style={{ animationDelay: `${index * 0.05}s` }}
                   onClick={() => service.id && navigate(`/services/programming/${service.id}`)}
@@ -361,7 +361,7 @@ const ServiceProgramming = () => {
             <h2 className="text-4xl font-bold text-center mb-12">
               Notre <span className="gradient-primary bg-clip-text text-transparent">Processus</span>
             </h2>
-            
+
             <div className="space-y-8">
               {[
                 { step: "01", title: "Analyse", desc: "Étude approfondie de vos besoins et objectifs" },
@@ -394,7 +394,7 @@ const ServiceProgramming = () => {
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
               Pourquoi Choisir BrandHub.ma pour vos Projets Développement Web?
             </h2>
-            
+
             <div className="grid md:grid-cols-4 gap-6">
               <Card className="p-6 text-center shadow-card">
                 <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
@@ -405,7 +405,7 @@ const ServiceProgramming = () => {
                   Réalisés depuis 2020 avec un taux de satisfaction de 98%
                 </p>
               </Card>
-              
+
               <Card className="p-6 text-center shadow-card">
                 <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4">
                   <Award className="w-8 h-8 text-blue-600" />
@@ -415,7 +415,7 @@ const ServiceProgramming = () => {
                   Certifications Google Analytics, Ads et développement web
                 </p>
               </Card>
-              
+
               <Card className="p-6 text-center shadow-card">
                 <div className="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center mx-auto mb-4">
                   <Globe className="w-8 h-8 text-purple-600" />
@@ -425,7 +425,7 @@ const ServiceProgramming = () => {
                   Service client en français et arabe, adapté au marché marocain
                 </p>
               </Card>
-              
+
               <Card className="p-6 text-center shadow-card">
                 <div className="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center mx-auto mb-4">
                   <Shield className="w-8 h-8 text-orange-600" />
@@ -441,7 +441,7 @@ const ServiceProgramming = () => {
       </section>
 
       {/* FAQ Section for Programming Services */}
-      <EnhancedFAQ 
+      <EnhancedFAQ
         faqs={programmingFAQs}
         title="Questions Fréquentes - Développement Web Maroc"
         description="Réponses aux questions les plus posées sur nos services de développement web au Maroc"
@@ -455,7 +455,7 @@ const ServiceProgramming = () => {
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
               Services Complémentaires
             </h2>
-            
+
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="p-6 hover:shadow-lg transition-shadow">
                 <Palette className="w-10 h-10 text-primary mb-4" />
@@ -467,7 +467,7 @@ const ServiceProgramming = () => {
                   <Link to="/services/graphics">En savoir plus</Link>
                 </Button>
               </Card>
-              
+
               <Card className="p-6 hover:shadow-lg transition-shadow">
                 <PenTool className="w-10 h-10 text-primary mb-4" />
                 <h3 className="font-bold text-lg mb-2">Création de Contenu</h3>
@@ -478,7 +478,7 @@ const ServiceProgramming = () => {
                   <Link to="/services/content">En savoir plus</Link>
                 </Button>
               </Card>
-              
+
               <Card className="p-6 hover:shadow-lg transition-shadow">
                 <BarChart3 className="w-10 h-10 text-primary mb-4" />
                 <h3 className="font-bold text-lg mb-2">Conseil Business</h3>

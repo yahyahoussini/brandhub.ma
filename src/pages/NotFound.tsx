@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -24,7 +24,7 @@ const NotFound = () => {
         <title>404 - Page non trouvée | BrandHub.ma</title>
         <meta name="robots" content="noindex,nofollow" />
       </Helmet>
-      
+
       <Navbar />
       <main className="flex min-h-[60vh] items-center justify-center pt-20">
         <div className="text-center px-4">

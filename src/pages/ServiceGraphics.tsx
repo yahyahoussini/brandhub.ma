@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { supabase } from "@/integrations/supabase/client";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -160,18 +160,18 @@ const ServiceGraphics = () => {
         <title>Design Graphique & Identité Visuelle | BrandHub.ma</title>
         <meta name="description" content="Services de design graphique professionnel au Maroc : création logo, identité visuelle, UI/UX design, motion design et design 3D. Agence créative pour visuels impactants qui marquent les esprits." />
         <meta name="keywords" content="design graphique maroc, création logo casablanca, identité visuelle maroc, ui ux design maroc, motion design afrique, design 3D maroc, charte graphique maroc, brand identity morocco, design print maroc, agence design casablanca" />
-        
+
         <meta property="og:title" content="Design Graphique & Identité Visuelle | BrandHub.ma" />
         <meta property="og:description" content="Créativité et design qui marquent les esprits. Services professionnels de design graphique, identité de marque et UI/UX au Maroc et en Afrique." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://brandhub.ma/services/graphics" />
-        
+
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Design Graphique & Identité Visuelle | BrandHub.ma" />
         <meta name="twitter:description" content="Services de design graphique professionnel : création logo, identité visuelle, UI/UX design au Maroc." />
-        
+
         <link rel="canonical" href="https://brandhub.ma/services/graphics" />
-        
+
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -191,7 +191,7 @@ const ServiceGraphics = () => {
             }
           })}
         </script>
-        
+
         {/* HowTo Schema for Design Process (AEO) */}
         <script type="application/ld+json">
           {JSON.stringify({
@@ -251,7 +251,7 @@ const ServiceGraphics = () => {
             ]
           })}
         </script>
-        
+
         {/* Speakable Schema for Voice Search */}
         <script type="application/ld+json">
           {JSON.stringify({
@@ -265,7 +265,7 @@ const ServiceGraphics = () => {
         </script>
       </Helmet>
       <Navbar />
-      
+
       <WavyBackground
         containerClassName="pt-32 pb-20"
         colors={["#11118b", "#8b5cf6", "#6366f1", "#a855f7", "#7c3aed"]}
@@ -281,16 +281,16 @@ const ServiceGraphics = () => {
               <Palette className="w-5 h-5 text-purple-600" />
               <span className="text-sm font-medium text-purple-600">Design & Graphisme</span>
             </div>
-            
+
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               Créativité et Design
               <span className="block gradient-primary bg-clip-text text-transparent mt-2">
                 Qui Marquent les Esprits
               </span>
             </h1>
-            
+
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              De l'identité de marque au design d'interfaces, nous créons des visuels 
+              De l'identité de marque au design d'interfaces, nous créons des visuels
               impactants qui reflètent l'essence de votre entreprise.
             </p>
           </div>
@@ -305,41 +305,41 @@ const ServiceGraphics = () => {
               Nos Services de Design Graphique dans Tout le Maroc
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              <strong>BrandHub.ma</strong> accompagne les entreprises marocaines avec des services de 
+              <strong>BrandHub.ma</strong> accompagne les entreprises marocaines avec des services de
               <span className="text-primary font-semibold"> design graphique professionnels</span> dans les principales villes du royaume.
             </p>
-            
+
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="p-6">
                 <h3 className="font-bold text-lg mb-2">🏙️ Grandes Métropoles</h3>
                 <p className="text-muted-foreground">
-                  <strong>Casablanca</strong> (centre économique), <strong>Rabat</strong> (capitale), 
+                  <strong>Casablanca</strong> (centre économique), <strong>Rabat</strong> (capitale),
                   <strong>Marrakech</strong> (tourisme), <strong>Fès</strong> (industrie)
                 </p>
               </Card>
-              
+
               <Card className="p-6">
                 <h3 className="font-bold text-lg mb-2">🌊 Villes Côtières</h3>
                 <p className="text-muted-foreground">
-                  <strong>Tanger</strong> (port), <strong>Agadir</strong> (pêche), 
+                  <strong>Tanger</strong> (port), <strong>Agadir</strong> (pêche),
                   <strong>Essaouira</strong>, <strong>El Jadida</strong>, <strong>Kenitra</strong>
                 </p>
               </Card>
-              
+
               <Card className="p-6">
                 <h3 className="font-bold text-lg mb-2">🏔️ Autres Régions</h3>
                 <p className="text-muted-foreground">
-                  <strong>Meknès</strong>, <strong>Oujda</strong>, <strong>Tétouan</strong>, 
+                  <strong>Meknès</strong>, <strong>Oujda</strong>, <strong>Tétouan</strong>,
                   <strong>Beni Mellal</strong>, <strong>Khouribga</strong> et plus
                 </p>
               </Card>
             </div>
-            
+
             <div className="mt-8 p-6 bg-primary/5 rounded-lg border-l-4 border-primary">
               <h4 className="font-bold text-lg mb-2">✅ Service Personnalisé par Région</h4>
               <p className="text-muted-foreground">
-                Que vous soyez à Casablanca ou dans une ville plus petite, nous adaptons nos services 
-                aux spécificités locales de votre marché. <strong>Déplacement possible</strong> ou 
+                Que vous soyez à Casablanca ou dans une ville plus petite, nous adaptons nos services
+                aux spécificités locales de votre marché. <strong>Déplacement possible</strong> ou
                 <strong> services 100% en ligne</strong> selon vos préférences.
               </p>
             </div>
@@ -351,13 +351,13 @@ const ServiceGraphics = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto justify-items-center">
             {displayServices.map((service, index) => {
-              const IconComponent = service.id 
+              const IconComponent = service.id
                 ? getIconComponent(service.icon)
                 : service.icon;
-              
+
               return (
                 <div
-                  key={service.id || index} 
+                  key={service.id || index}
                   className="animate-fade-in cursor-pointer"
                   style={{ animationDelay: `${index * 0.05}s` }}
                   onClick={() => navigate(`/services/graphics/${service.id}`)}
@@ -384,7 +384,7 @@ const ServiceGraphics = () => {
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
               Pourquoi Choisir BrandHub.ma pour vos Projets Design Graphique?
             </h2>
-            
+
             <div className="grid md:grid-cols-4 gap-6">
               <Card className="p-6 text-center shadow-card">
                 <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
@@ -395,7 +395,7 @@ const ServiceGraphics = () => {
                   Réalisés depuis 2020 avec un taux de satisfaction de 98%
                 </p>
               </Card>
-              
+
               <Card className="p-6 text-center shadow-card">
                 <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4">
                   <Award className="w-8 h-8 text-blue-600" />
@@ -405,7 +405,7 @@ const ServiceGraphics = () => {
                   Équipe créative avec certifications Adobe et formations design
                 </p>
               </Card>
-              
+
               <Card className="p-6 text-center shadow-card">
                 <div className="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center mx-auto mb-4">
                   <Globe className="w-8 h-8 text-purple-600" />
@@ -415,7 +415,7 @@ const ServiceGraphics = () => {
                   Service client en français et arabe, adapté au marché marocain
                 </p>
               </Card>
-              
+
               <Card className="p-6 text-center shadow-card">
                 <div className="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center mx-auto mb-4">
                   <Shield className="w-8 h-8 text-orange-600" />
@@ -431,7 +431,7 @@ const ServiceGraphics = () => {
       </section>
 
       {/* FAQ Section for Graphics Services */}
-      <EnhancedFAQ 
+      <EnhancedFAQ
         faqs={graphicsFAQs}
         title="Questions Fréquentes - Design Graphique Maroc"
         description="Tout savoir sur nos services de création graphique et identité visuelle au Maroc"
@@ -445,7 +445,7 @@ const ServiceGraphics = () => {
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
               Services Complémentaires
             </h2>
-            
+
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="p-6 hover:shadow-lg transition-shadow">
                 <Code className="w-10 h-10 text-primary mb-4" />
@@ -457,7 +457,7 @@ const ServiceGraphics = () => {
                   <Link to="/services/programming">En savoir plus</Link>
                 </Button>
               </Card>
-              
+
               <Card className="p-6 hover:shadow-lg transition-shadow">
                 <PenTool className="w-10 h-10 text-primary mb-4" />
                 <h3 className="font-bold text-lg mb-2">Création de Contenu</h3>
@@ -468,7 +468,7 @@ const ServiceGraphics = () => {
                   <Link to="/services/content">En savoir plus</Link>
                 </Button>
               </Card>
-              
+
               <Card className="p-6 hover:shadow-lg transition-shadow">
                 <BarChart3 className="w-10 h-10 text-primary mb-4" />
                 <h3 className="font-bold text-lg mb-2">Conseil Business</h3>

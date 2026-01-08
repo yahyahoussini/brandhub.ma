@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
@@ -54,12 +54,12 @@ const LocationMorocco = () => {
         <title>Agence Web Casablanca & Maroc | Développement Site Internet Pro 2024 | BrandHub.ma</title>
         <meta name="description" content="🥇 Agence web #1 au Maroc. Développement sites web professionnels, e-commerce et apps à Casablanca, Rabat, Marrakech. +200 clients satisfaits. Prix compétitifs dès 3000 MAD. Devis gratuit!" />
         <meta name="keywords" content="agence web casablanca, développement web maroc, création site web casablanca prix, agence digitale rabat, programmeur web marrakech, site e-commerce maroc, application mobile casablanca, développeur freelance maroc, agence marketing digital casablanca, برمجة مواقع الدار البيضاء, تصميم مواقع المغرب, شركة تطوير تطبيقات الرباط" />
-        
+
         {/* Enhanced for Morocco Searches */}
         <meta name="geo.region" content="MA" />
         <meta name="geo.placename" content="Morocco" />
         <meta name="coverage" content="Casablanca, Rabat, Marrakech, Fès, Tanger, Agadir, Meknès, Oujda, Kenitra, Tétouan, Salé, Mohammedia" />
-        
+
         {/* Open Graph */}
         <meta property="og:title" content="Agence Web Casablanca & Maroc | Développement Site Internet Pro" />
         <meta property="og:description" content="Agence web leader au Maroc. Développement web, e-commerce, apps mobiles. Casablanca, Rabat, Marrakech. +200 projets réussis." />
@@ -67,14 +67,14 @@ const LocationMorocco = () => {
         <meta property="og:url" content="https://brandhub.ma/maroc" />
         <meta property="og:locale" content="fr_MA" />
         <meta property="og:locale:alternate" content="ar_MA" />
-        
+
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Agence Web Casablanca & Maroc | BrandHub.ma" />
         <meta name="twitter:description" content="Développement web professionnel au Maroc. Sites, e-commerce, apps. Casablanca, Rabat, Marrakech." />
-        
+
         <link rel="canonical" content="https://brandhub.ma/maroc" />
-        
+
         {/* Morocco-Specific LocalBusiness Schema */}
         <script type="application/ld+json">
           {JSON.stringify({
@@ -101,12 +101,12 @@ const LocationMorocco = () => {
               "longitude": "-7.5898"
             },
             "areaServed": [
-              {"@type": "City", "name": "Casablanca", "sameAs": "https://en.wikipedia.org/wiki/Casablanca"},
-              {"@type": "City", "name": "Rabat", "sameAs": "https://en.wikipedia.org/wiki/Rabat"},
-              {"@type": "City", "name": "Marrakech", "sameAs": "https://en.wikipedia.org/wiki/Marrakech"},
-              {"@type": "City", "name": "Fès", "sameAs": "https://en.wikipedia.org/wiki/Fez,_Morocco"},
-              {"@type": "City", "name": "Tanger", "sameAs": "https://en.wikipedia.org/wiki/Tangier"},
-              {"@type": "City", "name": "Agadir", "sameAs": "https://en.wikipedia.org/wiki/Agadir"}
+              { "@type": "City", "name": "Casablanca", "sameAs": "https://en.wikipedia.org/wiki/Casablanca" },
+              { "@type": "City", "name": "Rabat", "sameAs": "https://en.wikipedia.org/wiki/Rabat" },
+              { "@type": "City", "name": "Marrakech", "sameAs": "https://en.wikipedia.org/wiki/Marrakech" },
+              { "@type": "City", "name": "Fès", "sameAs": "https://en.wikipedia.org/wiki/Fez,_Morocco" },
+              { "@type": "City", "name": "Tanger", "sameAs": "https://en.wikipedia.org/wiki/Tangier" },
+              { "@type": "City", "name": "Agadir", "sameAs": "https://en.wikipedia.org/wiki/Agadir" }
             ],
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
@@ -132,7 +132,7 @@ const LocationMorocco = () => {
             }
           })}
         </script>
-        
+
         {/* FAQ Schema for Morocco */}
         <script type="application/ld+json">
           {JSON.stringify({
@@ -179,13 +179,13 @@ const LocationMorocco = () => {
                 <MapPin className="w-4 h-4 text-primary" />
                 <span className="text-sm font-medium">Maroc</span>
               </div>
-              
+
               <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
                 Agence de Développement Web et Branding au Maroc
               </h1>
-              
+
               <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-                Votre partenaire digital au Maroc pour le développement web, le branding, le design graphique et le marketing digital. 
+                Votre partenaire digital au Maroc pour le développement web, le branding, le design graphique et le marketing digital.
                 Nous accompagnons les PME et grandes entreprises à Casablanca, Rabat, Marrakech et partout au Maroc dans leur transformation digitale.
               </p>
 
@@ -225,8 +225,8 @@ const LocationMorocco = () => {
                   </div>
                   <h3 className="text-xl font-bold mb-3">Développement Web Maroc</h3>
                   <p className="text-muted-foreground">
-                    Création de sites web professionnels, e-commerce et applications web sur mesure pour entreprises marocaines. 
-                    Technologies modernes et SEO optimisé pour le marché marocain. Découvrez nos 
+                    Création de sites web professionnels, e-commerce et applications web sur mesure pour entreprises marocaines.
+                    Technologies modernes et SEO optimisé pour le marché marocain. Découvrez nos
                     <Link to="/services/programming" className="text-primary hover:underline"> services de développement web complets</Link>.
                   </p>
                 </CardContent>
@@ -239,8 +239,8 @@ const LocationMorocco = () => {
                   </div>
                   <h3 className="text-xl font-bold mb-3">Branding & Design Graphique</h3>
                   <p className="text-muted-foreground">
-                    Création d'identité visuelle, logo design, charte graphique et supports marketing pour marques marocaines. 
-                    Design qui capture l'essence de votre entreprise au Maroc. Explorez nos 
+                    Création d'identité visuelle, logo design, charte graphique et supports marketing pour marques marocaines.
+                    Design qui capture l'essence de votre entreprise au Maroc. Explorez nos
                     <Link to="/services/graphics" className="text-primary hover:underline"> services de design et branding</Link>.
                   </p>
                 </CardContent>
@@ -253,8 +253,8 @@ const LocationMorocco = () => {
                   </div>
                   <h3 className="text-xl font-bold mb-3">Marketing Digital Maroc</h3>
                   <p className="text-muted-foreground">
-                    Stratégies SEO, publicité Google Ads, gestion réseaux sociaux et content marketing pour entreprises au Maroc. 
-                    Augmentez votre visibilité en ligne sur le marché marocain. Consultez nos 
+                    Stratégies SEO, publicité Google Ads, gestion réseaux sociaux et content marketing pour entreprises au Maroc.
+                    Augmentez votre visibilité en ligne sur le marché marocain. Consultez nos
                     <Link to="/services/content" className="text-primary hover:underline"> solutions de marketing digital</Link>.
                   </p>
                 </CardContent>
@@ -267,7 +267,7 @@ const LocationMorocco = () => {
                   </div>
                   <h3 className="text-xl font-bold mb-3">Conseil en Stratégie Digitale</h3>
                   <p className="text-muted-foreground">
-                    Accompagnement stratégique pour la transformation digitale de votre entreprise au Maroc. 
+                    Accompagnement stratégique pour la transformation digitale de votre entreprise au Maroc.
                     Analyse, audit et recommandations personnalisées.
                   </p>
                 </CardContent>
@@ -280,7 +280,7 @@ const LocationMorocco = () => {
                   </div>
                   <h3 className="text-xl font-bold mb-3">E-commerce Maroc</h3>
                   <p className="text-muted-foreground">
-                    Boutiques en ligne complètes avec paiement sécurisé adapté au marché marocain. 
+                    Boutiques en ligne complètes avec paiement sécurisé adapté au marché marocain.
                     Solutions WooCommerce, Shopify et développement sur mesure.
                   </p>
                 </CardContent>
@@ -293,7 +293,7 @@ const LocationMorocco = () => {
                   </div>
                   <h3 className="text-xl font-bold mb-3">Applications Web & Mobile</h3>
                   <p className="text-muted-foreground">
-                    Développement d'applications web progressives (PWA) et applications mobiles pour iOS et Android 
+                    Développement d'applications web progressives (PWA) et applications mobiles pour iOS et Android
                     pour entreprises marocaines.
                   </p>
                 </CardContent>
@@ -350,7 +350,7 @@ const LocationMorocco = () => {
                       <div>
                         <h3 className="font-bold text-lg mb-2">Expertise Locale au Maroc</h3>
                         <p className="text-muted-foreground">
-                          Connaissance approfondie du marché marocain, des comportements des consommateurs et des spécificités 
+                          Connaissance approfondie du marché marocain, des comportements des consommateurs et des spécificités
                           culturelles pour des solutions digitales adaptées aux entreprises marocaines.
                         </p>
                       </div>
@@ -363,7 +363,7 @@ const LocationMorocco = () => {
                       <div>
                         <h3 className="font-bold text-lg mb-2">Technologies de Pointe</h3>
                         <p className="text-muted-foreground">
-                          Développement web avec les dernières technologies: React, Node.js, WordPress, Shopify. 
+                          Développement web avec les dernières technologies: React, Node.js, WordPress, Shopify.
                           Sites web rapides, sécurisés et optimisés pour le SEO au Maroc.
                         </p>
                       </div>
@@ -376,7 +376,7 @@ const LocationMorocco = () => {
                       <div>
                         <h3 className="font-bold text-lg mb-2">Support Client Dédié</h3>
                         <p className="text-muted-foreground">
-                          Équipe disponible en français et arabe, support réactif et accompagnement continu après livraison. 
+                          Équipe disponible en français et arabe, support réactif et accompagnement continu après livraison.
                           Nous sommes là pour votre succès au Maroc.
                         </p>
                       </div>
@@ -389,7 +389,7 @@ const LocationMorocco = () => {
                       <div>
                         <h3 className="font-bold text-lg mb-2">Tarifs Compétitifs</h3>
                         <p className="text-muted-foreground">
-                          Prix transparents et adaptés au marché marocain. Excellent rapport qualité-prix pour des services 
+                          Prix transparents et adaptés au marché marocain. Excellent rapport qualité-prix pour des services
                           de développement web et branding professionnels.
                         </p>
                       </div>
@@ -408,7 +408,7 @@ const LocationMorocco = () => {
               <h2 className="text-3xl md:text-4xl font-bold mb-8">
                 Contactez Notre Agence au Maroc
               </h2>
-              
+
               <div className="grid md:grid-cols-3 gap-6 mb-8">
                 <Card className="shadow-card">
                   <CardContent className="p-6 text-center">
@@ -434,9 +434,9 @@ const LocationMorocco = () => {
                   <CardContent className="p-6 text-center">
                     <MapPin className="w-8 h-8 text-primary mx-auto mb-3" />
                     <h3 className="font-bold mb-2">WhatsApp</h3>
-                    <a 
-                      href="https://wa.me/212703026422?text=Bonjour%2C%20je%20souhaite%20discuter%20avec%20vous%20concernant%20vos%20services%20au%20Maroc." 
-                      target="_blank" 
+                    <a
+                      href="https://wa.me/212703026422?text=Bonjour%2C%20je%20souhaite%20discuter%20avec%20vous%20concernant%20vos%20services%20au%20Maroc."
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="text-muted-foreground hover:text-primary"
                     >
@@ -447,9 +447,9 @@ const LocationMorocco = () => {
               </div>
 
               <p className="text-lg text-muted-foreground">
-                Agence de développement web et branding au service des entreprises marocaines depuis plusieurs années. 
+                Agence de développement web et branding au service des entreprises marocaines depuis plusieurs années.
                 Transformez votre présence digitale au Maroc avec nos solutions professionnelles.
-                <Link to="/about" className="text-primary hover:underline">Découvrez notre histoire</Link> et 
+                <Link to="/about" className="text-primary hover:underline">Découvrez notre histoire</Link> et
                 <Link to="/blog" className="text-primary hover:underline">consultez nos articles spécialisés</Link> pour en savoir plus.
               </p>
             </div>
@@ -457,7 +457,7 @@ const LocationMorocco = () => {
         </section>
 
         {/* Enhanced FAQ Section for Morocco SEO */}
-        <EnhancedFAQ 
+        <EnhancedFAQ
           faqs={moroccoFAQs}
           title="Questions Fréquentes - Services Web au Maroc"
           description="Tout ce que vous devez savoir sur nos services de développement web, prix et processus au Maroc"

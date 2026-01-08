@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
@@ -28,13 +28,13 @@ const LocationSaudiArabia = () => {
                 <MapPin className="w-4 h-4 text-primary" />
                 <span className="text-sm font-medium">المملكة العربية السعودية</span>
               </div>
-              
+
               <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
                 وكالة تطوير الويب والعلامات التجارية في السعودية
               </h1>
-              
+
               <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-                شريكك الرقمي في السعودية لتطوير الويب، العلامات التجارية، التصميم الجرافيكي والتسويق الرقمي. 
+                شريكك الرقمي في السعودية لتطوير الويب، العلامات التجارية، التصميم الجرافيكي والتسويق الرقمي.
                 نرافق الشركات الصغيرة والكبيرة في الرياض، جدة، الدمام وجميع أنحاء السعودية في تحولها الرقمي.
               </p>
 
@@ -74,7 +74,7 @@ const LocationSaudiArabia = () => {
                   </div>
                   <h3 className="text-xl font-bold mb-3">تطوير الويب السعودية</h3>
                   <p className="text-muted-foreground">
-                    إنشاء مواقع ويب احترافية، متاجر إلكترونية وتطبيقات ويب مخصصة للشركات السعودية. 
+                    إنشاء مواقع ويب احترافية، متاجر إلكترونية وتطبيقات ويب مخصصة للشركات السعودية.
                     تقنيات حديثة وتحسين SEO للسوق السعودي.
                   </p>
                 </CardContent>
@@ -87,7 +87,7 @@ const LocationSaudiArabia = () => {
                   </div>
                   <h3 className="text-xl font-bold mb-3">العلامة التجارية والتصميم الجرافيكي</h3>
                   <p className="text-muted-foreground">
-                    إنشاء هوية بصرية، تصميم شعارات، دليل العلامة التجارية ومواد التسويق للعلامات السعودية. 
+                    إنشاء هوية بصرية، تصميم شعارات، دليل العلامة التجارية ومواد التسويق للعلامات السعودية.
                     تصميم يعكس جوهر شركتك في السعودية.
                   </p>
                 </CardContent>
@@ -100,7 +100,7 @@ const LocationSaudiArabia = () => {
                   </div>
                   <h3 className="text-xl font-bold mb-3">التسويق الرقمي السعودية</h3>
                   <p className="text-muted-foreground">
-                    استراتيجيات SEO، إعلانات Google، إدارة وسائل التواصل الاجتماعي وتسويق المحتوى للشركات في السعودية. 
+                    استراتيجيات SEO، إعلانات Google، إدارة وسائل التواصل الاجتماعي وتسويق المحتوى للشركات في السعودية.
                     زد من ظهورك على الإنترنت في السوق السعودي.
                   </p>
                 </CardContent>
@@ -113,7 +113,7 @@ const LocationSaudiArabia = () => {
                   </div>
                   <h3 className="text-xl font-bold mb-3">استشارات الاستراتيجية الرقمية</h3>
                   <p className="text-muted-foreground">
-                    دعم استراتيجي للتحول الرقمي لشركتك في السعودية. 
+                    دعم استراتيجي للتحول الرقمي لشركتك في السعودية.
                     تحليل، تدقيق وتوصيات مخصصة.
                   </p>
                 </CardContent>
@@ -126,7 +126,7 @@ const LocationSaudiArabia = () => {
                   </div>
                   <h3 className="text-xl font-bold mb-3">التجارة الإلكترونية السعودية</h3>
                   <p className="text-muted-foreground">
-                    متاجر إلكترونية متكاملة مع بوابة دفع آمنة مناسبة للسوق السعودي. 
+                    متاجر إلكترونية متكاملة مع بوابة دفع آمنة مناسبة للسوق السعودي.
                     حلول WooCommerce و Shopify وتطوير مخصص.
                   </p>
                 </CardContent>
@@ -139,7 +139,7 @@ const LocationSaudiArabia = () => {
                   </div>
                   <h3 className="text-xl font-bold mb-3">تطبيقات الويب والموبايل</h3>
                   <p className="text-muted-foreground">
-                    تطوير تطبيقات ويب تقدمية (PWA) وتطبيقات موبايل لنظامي iOS و Android 
+                    تطوير تطبيقات ويب تقدمية (PWA) وتطبيقات موبايل لنظامي iOS و Android
                     للشركات السعودية.
                   </p>
                 </CardContent>
@@ -196,7 +196,7 @@ const LocationSaudiArabia = () => {
                       <div>
                         <h3 className="font-bold text-lg mb-2">خبرة في السوق السعودي</h3>
                         <p className="text-muted-foreground">
-                          معرفة عميقة بالسوق السعودي، سلوكيات المستهلكين والخصوصيات الثقافية 
+                          معرفة عميقة بالسوق السعودي، سلوكيات المستهلكين والخصوصيات الثقافية
                           لحلول رقمية مناسبة للشركات السعودية.
                         </p>
                       </div>
@@ -209,7 +209,7 @@ const LocationSaudiArabia = () => {
                       <div>
                         <h3 className="font-bold text-lg mb-2">تقنيات متطورة</h3>
                         <p className="text-muted-foreground">
-                          تطوير ويب بأحدث التقنيات: React و Node.js و WordPress و Shopify. 
+                          تطوير ويب بأحدث التقنيات: React و Node.js و WordPress و Shopify.
                           مواقع سريعة وآمنة ومحسنة لـ SEO في السعودية.
                         </p>
                       </div>
@@ -222,7 +222,7 @@ const LocationSaudiArabia = () => {
                       <div>
                         <h3 className="font-bold text-lg mb-2">دعم مخصص</h3>
                         <p className="text-muted-foreground">
-                          فريق متاح بالعربية، دعم سريع ومرافقة مستمرة بعد التسليم. 
+                          فريق متاح بالعربية، دعم سريع ومرافقة مستمرة بعد التسليم.
                           نحن هنا لنجاحك في السعودية.
                         </p>
                       </div>
@@ -235,7 +235,7 @@ const LocationSaudiArabia = () => {
                       <div>
                         <h3 className="font-bold text-lg mb-2">أسعار تنافسية</h3>
                         <p className="text-muted-foreground">
-                          أسعار شفافة ومناسبة للسوق السعودي. نسبة ممتازة بين السعر والجودة لخدمات 
+                          أسعار شفافة ومناسبة للسوق السعودي. نسبة ممتازة بين السعر والجودة لخدمات
                           تطوير الويب والعلامات التجارية الاحترافية.
                         </p>
                       </div>
@@ -254,7 +254,7 @@ const LocationSaudiArabia = () => {
               <h2 className="text-3xl md:text-4xl font-bold mb-8">
                 تواصل مع وكالتنا في السعودية
               </h2>
-              
+
               <div className="grid md:grid-cols-3 gap-6 mb-8">
                 <Card className="shadow-card">
                   <CardContent className="p-6 text-center">
@@ -280,9 +280,9 @@ const LocationSaudiArabia = () => {
                   <CardContent className="p-6 text-center">
                     <MapPin className="w-8 h-8 text-primary mx-auto mb-3" />
                     <h3 className="font-bold mb-2">واتساب</h3>
-                    <a 
-                      href="https://wa.me/212703026422?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%AA%D8%AD%D8%AF%D8%AB%20%D9%85%D8%B9%D9%83%D9%85%20%D8%A8%D8%AE%D8%B5%D9%88%D8%B5%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%D9%83%D9%85%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9." 
-                      target="_blank" 
+                    <a
+                      href="https://wa.me/212703026422?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%AA%D8%AD%D8%AF%D8%AB%20%D9%85%D8%B9%D9%83%D9%85%20%D8%A8%D8%AE%D8%B5%D9%88%D8%B5%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%D9%83%D9%85%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9."
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="text-muted-foreground hover:text-primary"
                     >
@@ -293,7 +293,7 @@ const LocationSaudiArabia = () => {
               </div>
 
               <p className="text-lg text-muted-foreground">
-                وكالة تطوير الويب والعلامات التجارية في خدمة الشركات السعودية منذ عدة سنوات. 
+                وكالة تطوير الويب والعلامات التجارية في خدمة الشركات السعودية منذ عدة سنوات.
                 حول تواجدك الرقمي في السعودية بحلولنا الاحترافية.
               </p>
             </div>

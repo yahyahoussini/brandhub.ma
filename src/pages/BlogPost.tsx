@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -25,10 +25,10 @@ const BlogPost = () => {
 
   const parseContent = (rawContent: string): string => {
     if (!rawContent) return '';
-    
+
     console.log('Raw content from DB:', rawContent.substring(0, 200));
     let cleaned = rawContent.trim();
-    
+
     // Remove markdown code block wrapper (```json and ```)
     if (cleaned.startsWith('```')) {
       console.log('Removing markdown wrapper...');
@@ -39,7 +39,7 @@ const BlogPost = () => {
       cleaned = cleaned.trim();
       console.log('After removing wrapper:', cleaned.substring(0, 200));
     }
-    
+
     // Try to parse as JSON if it looks like JSON
     if (cleaned.startsWith('{') || cleaned.startsWith('[')) {
       try {
@@ -54,7 +54,7 @@ const BlogPost = () => {
         console.log('Failed to parse:', cleaned.substring(0, 500));
       }
     }
-    
+
     console.log('Final parsed content:', cleaned.substring(0, 200));
     return cleaned;
   };
@@ -130,7 +130,7 @@ const BlogPost = () => {
         <title>{post?.title} | Blog BrandHub.ma</title>
         <meta name="description" content={post?.excerpt || cleanContent || `Découvrez notre article sur ${post?.category?.toLowerCase()}`} />
         <link rel="canonical" href={currentUrl} />
-        
+
         {/* Open Graph */}
         <meta property="og:title" content={post?.title} />
         <meta property="og:description" content={post?.excerpt || cleanContent} />
@@ -140,13 +140,13 @@ const BlogPost = () => {
         <meta property="article:published_time" content={post?.published_at} />
         <meta property="article:author" content="BrandHub.ma" />
         <meta property="article:section" content={post?.category} />
-        
+
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={post?.title} />
         <meta name="twitter:description" content={post?.excerpt || cleanContent} />
         <meta name="twitter:image" content={post?.image_url || 'https://brandhub.ma/favicone.png'} />
-        
+
         {/* Enhanced Article Schema for AEO */}
         <script type="application/ld+json">
           {JSON.stringify({
@@ -194,7 +194,7 @@ const BlogPost = () => {
             "keywords": post?.tags?.join(', ') || post?.category
           })}
         </script>
-        
+
         {/* Speakable Schema for Voice Search */}
         <script type="application/ld+json">
           {JSON.stringify({
@@ -207,9 +207,9 @@ const BlogPost = () => {
           })}
         </script>
       </Helmet>
-      
+
       <Navbar />
-      
+
       <article className="pt-32 pb-20">
         <div className="container mx-auto px-4 max-w-4xl">
           {/* Back Button */}
@@ -246,7 +246,7 @@ const BlogPost = () => {
 
           {/* Social Share */}
           <div className="mb-8">
-            <SocialShare 
+            <SocialShare
               url={currentUrl}
               title={post.title}
               description={post.excerpt || cleanContent}
@@ -255,8 +255,8 @@ const BlogPost = () => {
 
           {/* Featured Image */}
           <div className="aspect-video mb-12 rounded-2xl overflow-hidden shadow-elegant animate-fade-in">
-            <img 
-              src={post.image_url || 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=1200&h=600&fit=crop'} 
+            <img
+              src={post.image_url || 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=1200&h=600&fit=crop'}
               alt={`Image de couverture: ${post.title}`}
               loading="lazy"
               width="1200"
@@ -267,7 +267,7 @@ const BlogPost = () => {
           </div>
 
           {/* Content */}
-          <div 
+          <div
             className="prose prose-lg max-w-none animate-fade-in prose-headings:text-foreground prose-p:text-muted-foreground prose-strong:text-foreground prose-ul:text-muted-foreground prose-ol:text-muted-foreground"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
@@ -280,8 +280,8 @@ const BlogPost = () => {
             <p className="text-white/90 mb-6">
               Discutons de comment nous pouvons vous aider à atteindre vos objectifs digitaux.
             </p>
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="gradient-accent text-foreground hover:shadow-accent transition-smooth font-semibold"
               asChild
             >

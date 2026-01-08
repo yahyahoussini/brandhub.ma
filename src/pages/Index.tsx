@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { HeroSkeleton, ServicesSkeleton, TestimonialsSkeleton, ContentSkeleton } from "@/components/LoadingSkeleton";
@@ -23,12 +23,12 @@ const Index = () => {
         <title>Agence Web #1 au Maroc 2024 | Développement Site Web Casablanca, Rabat | BrandHub.ma</title>
         <meta name="description" content="🏆 Agence web leader au Maroc depuis 2020. Développement sites web, e-commerce et apps mobiles à Casablanca, Rabat, Marrakech. +300 projets réussis. Devis gratuit 24h! Prix dès 3000 MAD." />
         <meta name="keywords" content="agence web maroc, développement web casablanca, création site web maroc, agence digitale rabat, programmeur web marrakech, site internet maroc prix, e-commerce maroc, application mobile maroc, برمجة المواقع المغرب, تصميم مواقع الدار البيضاء" />
-        
+
         {/* Enhanced Local SEO */}
         <meta name="geo.region" content="MA-CAS" />
         <meta name="geo.placename" content="Casablanca" />
         <meta name="geo.position" content="33.5731;-7.5898" />
-        
+
         {/* Open Graph Enhanced */}
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="fr_MA" />
@@ -40,15 +40,15 @@ const Index = () => {
         <meta property="og:image" content="https://brandhub.ma/favicone.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        
+
         {/* Twitter Enhanced */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@brandhubma" />
         <meta name="twitter:title" content="Agence Web #1 au Maroc | BrandHub.ma" />
         <meta name="twitter:description" content="Développement web professionnel au Maroc. Sites web, e-commerce, apps mobiles. Casablanca, Rabat, Marrakech." />
-        
+
         <link rel="canonical" href="https://brandhub.ma/" />
-        
+
         {/* Enhanced Structured Data - LocalBusiness */}
         <script type="application/ld+json">
           {JSON.stringify({
@@ -82,12 +82,12 @@ const Index = () => {
               "closes": "18:00"
             },
             "areaServed": [
-              {"@type": "City", "name": "Casablanca"},
-              {"@type": "City", "name": "Rabat"},
-              {"@type": "City", "name": "Marrakech"},
-              {"@type": "City", "name": "Fès"},
-              {"@type": "City", "name": "Tanger"},
-              {"@type": "City", "name": "Agadir"}
+              { "@type": "City", "name": "Casablanca" },
+              { "@type": "City", "name": "Rabat" },
+              { "@type": "City", "name": "Marrakech" },
+              { "@type": "City", "name": "Fès" },
+              { "@type": "City", "name": "Tanger" },
+              { "@type": "City", "name": "Agadir" }
             ],
             "aggregateRating": {
               "@type": "AggregateRating",
@@ -103,7 +103,7 @@ const Index = () => {
             }
           })}
         </script>
-        
+
         {/* FAQ Schema for Featured Snippets */}
         <script type="application/ld+json">
           {JSON.stringify({
@@ -146,73 +146,73 @@ const Index = () => {
           })}
         </script>
       </Helmet>
-      
+
       <PerformanceOptimizer />
-      
+
       {/* Skip to main content link for keyboard navigation */}
-      <a 
-        href="#main-content" 
+      <a
+        href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-primary focus:text-primary-foreground focus:px-4 focus:py-2 focus:rounded"
       >
         Aller au contenu principal
       </a>
-      
+
       <Navbar />
-      
+
       <main id="main-content" role="main">
         <Suspense fallback={<HeroSkeleton />}>
           <Hero />
         </Suspense>
-        
+
         <Suspense fallback={<ServicesSkeleton />}>
           <ServicesOverview />
         </Suspense>
-        
+
         <Suspense fallback={<TestimonialsSkeleton />}>
           <Testimonials />
         </Suspense>
-      
-      <LazyLoadObserver fallback={<ContentSkeleton />} rootMargin="200px">
-        <Suspense fallback={<ContentSkeleton />}>
-          <CTAWithVerticalMarquee />
-        </Suspense>
-      </LazyLoadObserver>
-      
-      <LazyLoadObserver fallback={<ContentSkeleton />} rootMargin="200px">
-        <Suspense fallback={<ContentSkeleton />}>
-          <NeuralNetworkHero 
-            title="Prêt à Transformer Votre Vision en Réalité?"
-            description="Discutons de votre projet et découvrez comment nous pouvons vous aider à atteindre vos objectifs avec des solutions innovantes et performantes."
-            badgeText="Technologie de Pointe"
-            badgeLabel="Nouveau"
-            ctaButtons={[
-              { text: "Consultation Gratuite", href: "https://wa.me/212703026422?text=Bonjour%2C%20je%20souhaite%20une%20consultation%20gratuite.%20Je%20vous%20contacte%20depuis%20la%20section%20technologique%20de%20votre%20site.", primary: true },
-              { text: "Voir Nos Projets", href: "/services/programming" }
-            ]}
-            microDetails={["Innovation constante", "Expertise confirmée", "Résultats garantis"]}
-          />
-        </Suspense>
-      </LazyLoadObserver>
-      
-      <LazyLoadObserver fallback={<ContentSkeleton />} rootMargin="200px">
-        <Suspense fallback={<ContentSkeleton />}>
-          <WorldMapSection />
-        </Suspense>
-      </LazyLoadObserver>
-      
-      <LazyLoadObserver fallback={<ContentSkeleton />} rootMargin="200px">
-        <Suspense fallback={<ContentSkeleton />}>
-          <TechStackCloud />
-        </Suspense>
-      </LazyLoadObserver>
-      
-      <LazyLoadObserver fallback={<ContentSkeleton />} rootMargin="200px">
-        <Suspense fallback={<ContentSkeleton />}>
-          <BlogPreview />
-        </Suspense>
-      </LazyLoadObserver>
+
+        <LazyLoadObserver fallback={<ContentSkeleton />} rootMargin="200px">
+          <Suspense fallback={<ContentSkeleton />}>
+            <CTAWithVerticalMarquee />
+          </Suspense>
+        </LazyLoadObserver>
+
+        <LazyLoadObserver fallback={<ContentSkeleton />} rootMargin="200px">
+          <Suspense fallback={<ContentSkeleton />}>
+            <NeuralNetworkHero
+              title="Prêt à Transformer Votre Vision en Réalité?"
+              description="Discutons de votre projet et découvrez comment nous pouvons vous aider à atteindre vos objectifs avec des solutions innovantes et performantes."
+              badgeText="Technologie de Pointe"
+              badgeLabel="Nouveau"
+              ctaButtons={[
+                { text: "Consultation Gratuite", href: "https://wa.me/212703026422?text=Bonjour%2C%20je%20souhaite%20une%20consultation%20gratuite.%20Je%20vous%20contacte%20depuis%20la%20section%20technologique%20de%20votre%20site.", primary: true },
+                { text: "Voir Nos Projets", href: "/services/programming" }
+              ]}
+              microDetails={["Innovation constante", "Expertise confirmée", "Résultats garantis"]}
+            />
+          </Suspense>
+        </LazyLoadObserver>
+
+        <LazyLoadObserver fallback={<ContentSkeleton />} rootMargin="200px">
+          <Suspense fallback={<ContentSkeleton />}>
+            <WorldMapSection />
+          </Suspense>
+        </LazyLoadObserver>
+
+        <LazyLoadObserver fallback={<ContentSkeleton />} rootMargin="200px">
+          <Suspense fallback={<ContentSkeleton />}>
+            <TechStackCloud />
+          </Suspense>
+        </LazyLoadObserver>
+
+        <LazyLoadObserver fallback={<ContentSkeleton />} rootMargin="200px">
+          <Suspense fallback={<ContentSkeleton />}>
+            <BlogPreview />
+          </Suspense>
+        </LazyLoadObserver>
       </main>
-      
+
       <Footer />
     </div>
   );

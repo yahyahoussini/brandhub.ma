@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { supabase } from "@/integrations/supabase/client";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -159,18 +159,18 @@ const ServiceBusiness = () => {
         <title>Services Business Intelligence & Analyse de Données | BrandHub.ma</title>
         <meta name="description" content="BrandHub offre des services experts en Business Intelligence, analyse de données, études de marché et conseil stratégique au Maroc et en Afrique. Prenez des décisions éclairées basées sur les données." />
         <meta name="keywords" content="business intelligence maroc, analyse de données maroc, études de marché afrique, conseil stratégique maroc, data analytics casablanca, gestion de données maroc, business plans maroc, consultation légale business maroc, insights stratégiques afrique" />
-        
+
         <meta property="og:title" content="Services Business Intelligence & Analyse de Données | BrandHub.ma" />
         <meta property="og:description" content="Exploitez la puissance des données avec nos services de Business Intelligence, analyse stratégique et conseil business. Solutions data-driven pour votre croissance." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://brandhub.ma/services/business" />
-        
+
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Services Business Intelligence & Analyse de Données | BrandHub.ma" />
         <meta name="twitter:description" content="Exploitez la puissance des données avec nos services de Business Intelligence, analyse stratégique et conseil business." />
-        
+
         <link rel="canonical" href="https://brandhub.ma/services/business" />
-        
+
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -190,7 +190,7 @@ const ServiceBusiness = () => {
             }
           })}
         </script>
-        
+
         {/* HowTo Schema for Business Process (AEO) */}
         <script type="application/ld+json">
           {JSON.stringify({
@@ -243,7 +243,7 @@ const ServiceBusiness = () => {
             ]
           })}
         </script>
-        
+
         {/* Speakable Schema for Voice Search */}
         <script type="application/ld+json">
           {JSON.stringify({
@@ -257,7 +257,7 @@ const ServiceBusiness = () => {
         </script>
       </Helmet>
       <Navbar />
-      
+
       <WavyBackground
         containerClassName="pt-32 pb-20"
         colors={["#11118b", "#8b5cf6", "#6366f1", "#a855f7", "#7c3aed"]}
@@ -273,16 +273,16 @@ const ServiceBusiness = () => {
               <BarChart3 className="w-5 h-5 text-green-600" />
               <span className="text-sm font-medium text-green-600">Business & Data</span>
             </div>
-            
+
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               Insights Stratégiques
               <span className="block gradient-primary bg-clip-text text-transparent mt-2">
                 Pour Décisions Éclairées
               </span>
             </h1>
-            
+
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Exploitez la puissance des données et du conseil stratégique 
+              Exploitez la puissance des données et du conseil stratégique
               pour optimiser votre activité et accélérer votre croissance.
             </p>
           </div>
@@ -297,41 +297,41 @@ const ServiceBusiness = () => {
               Nos Services Business Intelligence dans Tout le Maroc
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              <strong>BrandHub.ma</strong> accompagne les entreprises marocaines avec des services de 
+              <strong>BrandHub.ma</strong> accompagne les entreprises marocaines avec des services de
               <span className="text-primary font-semibold"> conseil business professionnels</span> dans les principales villes du royaume.
             </p>
-            
+
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="p-6">
                 <h3 className="font-bold text-lg mb-2">🏙️ Grandes Métropoles</h3>
                 <p className="text-muted-foreground">
-                  <strong>Casablanca</strong> (centre économique), <strong>Rabat</strong> (capitale), 
+                  <strong>Casablanca</strong> (centre économique), <strong>Rabat</strong> (capitale),
                   <strong>Marrakech</strong> (tourisme), <strong>Fès</strong> (industrie)
                 </p>
               </Card>
-              
+
               <Card className="p-6">
                 <h3 className="font-bold text-lg mb-2">🌊 Villes Côtières</h3>
                 <p className="text-muted-foreground">
-                  <strong>Tanger</strong> (port), <strong>Agadir</strong> (pêche), 
+                  <strong>Tanger</strong> (port), <strong>Agadir</strong> (pêche),
                   <strong>Essaouira</strong>, <strong>El Jadida</strong>, <strong>Kenitra</strong>
                 </p>
               </Card>
-              
+
               <Card className="p-6">
                 <h3 className="font-bold text-lg mb-2">🏔️ Autres Régions</h3>
                 <p className="text-muted-foreground">
-                  <strong>Meknès</strong>, <strong>Oujda</strong>, <strong>Tétouan</strong>, 
+                  <strong>Meknès</strong>, <strong>Oujda</strong>, <strong>Tétouan</strong>,
                   <strong>Beni Mellal</strong>, <strong>Khouribga</strong> et plus
                 </p>
               </Card>
             </div>
-            
+
             <div className="mt-8 p-6 bg-primary/5 rounded-lg border-l-4 border-primary">
               <h4 className="font-bold text-lg mb-2">✅ Service Personnalisé par Région</h4>
               <p className="text-muted-foreground">
-                Que vous soyez à Casablanca ou dans une ville plus petite, nous adaptons nos services 
-                aux spécificités locales de votre marché. <strong>Déplacement possible</strong> ou 
+                Que vous soyez à Casablanca ou dans une ville plus petite, nous adaptons nos services
+                aux spécificités locales de votre marché. <strong>Déplacement possible</strong> ou
                 <strong> services 100% en ligne</strong> selon vos préférences.
               </p>
             </div>
@@ -343,13 +343,13 @@ const ServiceBusiness = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto justify-items-center">
             {displayServices.map((service, index) => {
-              const IconComponent = service.id 
+              const IconComponent = service.id
                 ? getIconComponent(service.icon)
                 : service.icon;
-              
+
               return (
                 <div
-                  key={service.id || index} 
+                  key={service.id || index}
                   className="animate-fade-in cursor-pointer"
                   style={{ animationDelay: `${index * 0.05}s` }}
                   onClick={() => navigate(`/services/business/${service.id}`)}
@@ -376,7 +376,7 @@ const ServiceBusiness = () => {
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
               Pourquoi Choisir BrandHub.ma pour vos Projets Business Intelligence?
             </h2>
-            
+
             <div className="grid md:grid-cols-4 gap-6">
               <Card className="p-6 text-center shadow-card">
                 <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
@@ -387,7 +387,7 @@ const ServiceBusiness = () => {
                   Réalisés depuis 2020 avec un taux de satisfaction de 98%
                 </p>
               </Card>
-              
+
               <Card className="p-6 text-center shadow-card">
                 <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4">
                   <Award className="w-8 h-8 text-blue-600" />
@@ -397,7 +397,7 @@ const ServiceBusiness = () => {
                   Équipe certifiée Tableau, Power BI et Google Analytics
                 </p>
               </Card>
-              
+
               <Card className="p-6 text-center shadow-card">
                 <div className="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center mx-auto mb-4">
                   <Globe className="w-8 h-8 text-purple-600" />
@@ -407,7 +407,7 @@ const ServiceBusiness = () => {
                   Service client en français et arabe, adapté au marché marocain
                 </p>
               </Card>
-              
+
               <Card className="p-6 text-center shadow-card">
                 <div className="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center mx-auto mb-4">
                   <Shield className="w-8 h-8 text-orange-600" />
@@ -423,7 +423,7 @@ const ServiceBusiness = () => {
       </section>
 
       {/* FAQ Section for Business Services */}
-      <EnhancedFAQ 
+      <EnhancedFAQ
         faqs={businessFAQs}
         title="Questions Fréquentes - Business Intelligence Maroc"
         description="Tout savoir sur nos services de conseil business et analyse de données au Maroc"
@@ -437,7 +437,7 @@ const ServiceBusiness = () => {
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
               Services Complémentaires
             </h2>
-            
+
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="p-6 hover:shadow-lg transition-shadow">
                 <Code className="w-10 h-10 text-primary mb-4" />
@@ -449,7 +449,7 @@ const ServiceBusiness = () => {
                   <Link to="/services/programming">En savoir plus</Link>
                 </Button>
               </Card>
-              
+
               <Card className="p-6 hover:shadow-lg transition-shadow">
                 <Palette className="w-10 h-10 text-primary mb-4" />
                 <h3 className="font-bold text-lg mb-2">Design Graphique</h3>
@@ -460,7 +460,7 @@ const ServiceBusiness = () => {
                   <Link to="/services/graphics">En savoir plus</Link>
                 </Button>
               </Card>
-              
+
               <Card className="p-6 hover:shadow-lg transition-shadow">
                 <PenTool className="w-10 h-10 text-primary mb-4" />
                 <h3 className="font-bold text-lg mb-2">Création de Contenu</h3>

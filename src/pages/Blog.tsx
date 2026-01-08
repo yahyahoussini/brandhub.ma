@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "lucide-react";
@@ -28,7 +28,7 @@ const Blog = () => {
   const fetchPosts = async () => {
     setLoading(true);
     setError(null);
-    
+
     try {
       const { data, error: fetchError } = await supabase
         .from('blog_posts')
@@ -37,7 +37,7 @@ const Blog = () => {
         .order('published_at', { ascending: false });
 
       if (fetchError) throw fetchError;
-      
+
       setPosts(data || []);
     } catch (err) {
       console.error('Error fetching blog posts:', err);
@@ -137,9 +137,9 @@ const Blog = () => {
         <meta name="twitter:title" content="Blog BrandHub.ma - Conseils Digital & Tech" />
         <meta name="twitter:description" content="Articles, conseils et insights pour votre succès digital au Maroc" />
       </Helmet>
-      
+
       <Navbar />
-      
+
       <section className="pt-32 pb-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in">
@@ -180,8 +180,8 @@ const Blog = () => {
                 <Link key={post.id} to={`/blog/${post.slug}`} aria-label={`Lire l'article: ${post.title}`}>
                   <Card className="hover-lift overflow-hidden h-full animate-fade-in" style={{ animationDelay: `${index * 0.05}s` }}>
                     <div className="aspect-video overflow-hidden">
-                      <img 
-                        src={post.image_url || 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&h=600&fit=crop'} 
+                      <img
+                        src={post.image_url || 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&h=600&fit=crop'}
                         alt={`Image de couverture: ${post.title}`}
                         loading="lazy"
                         width="800"
@@ -190,7 +190,7 @@ const Blog = () => {
                         className="w-full h-full object-cover transition-smooth hover:scale-110"
                       />
                     </div>
-                    
+
                     <CardContent className="p-6">
                       <div className="flex items-center space-x-4 text-sm text-muted-foreground mb-3">
                         <span className="px-3 py-1 bg-primary/10 text-primary rounded-full font-medium">
@@ -205,7 +205,7 @@ const Blog = () => {
                       <h2 className="text-xl font-bold mb-2 hover:text-primary transition-base">
                         {post.title}
                       </h2>
-                      
+
                       <p className="text-muted-foreground text-sm leading-relaxed">
                         {post.excerpt}
                       </p>

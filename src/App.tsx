@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from 'react-helmet-async';
 import { CanonicalLink } from "@/components/CanonicalLink";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import ErrorBoundary from "@/components/ErrorBoundary";
@@ -48,65 +49,67 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <ErrorBoundary>
-        <Toaster />
-        <Sonner />
-        <CookieConsent />
-        <BrowserRouter
-          future={{
-            v7_startTransition: true,
-            v7_relativeSplatPath: true,
-          }}
-        >
-          <CanonicalLink />
-          <BreadcrumbSchema />
-          <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/terms" element={<Terms />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:id" element={<BlogPost />} />
-          <Route path="/services/programming" element={<ServiceProgramming />} />
-          <Route path="/services/graphics" element={<ServiceGraphics />} />
-          <Route path="/services/content" element={<ServiceContent />} />
-          <Route path="/services/business" element={<ServiceBusiness />} />
-          <Route path="/services/:category/:id" element={<ServiceDetail />} />
-          <Route path="/maroc" element={<LocationMorocco />} />
-          <Route path="/espana" element={<LocationSpain />} />
-          <Route path="/saudi-arabia" element={<LocationSaudiArabia />} />
-          <Route path="/auth" element={<Auth />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          
-          {/* Admin Routes */}
-          <Route path="/admin" element={<AdminLayout />}>
-            <Route index element={<AdminDashboard />} />
-            <Route path="blog" element={<AdminBlogEditor />} />
-            <Route path="blog/generate" element={<SimpleBlogGenerator />} />
-            <Route path="blog/quick-generate" element={<QuickBlogGenerator />} />
-            <Route path="blog/auto-generate" element={<AutoBlogGenerator />} />
-            <Route path="analytics" element={<AdminAnalytics />} />
-            <Route path="seo" element={<AdminSEO />} />
-            <Route path="projects" element={<AdminProjects />} />
-            <Route path="clients" element={<AdminClients />} />
-            <Route path="services" element={<AdminServices />} />
-            <Route path="services/:id" element={<AdminServiceDetails />} />
-            <Route path="inquiries" element={<AdminInquiries />} />
-            <Route path="testimonials" element={<AdminTestimonials />} />
-            <Route path="api-keys" element={<AdminApiKeys />} />
-            <Route path="settings" element={<AdminSettings />} />
-            <Route path="revenue" element={<AdminRevenue />} />
-            <Route path="marketing" element={<AdminMarketing />} />
-            <Route path="email" element={<AdminEmail />} />
-          </Route>
-          
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-      </ErrorBoundary>
-    </TooltipProvider>
+    <HelmetProvider>
+      <TooltipProvider>
+        <ErrorBoundary>
+          <Toaster />
+          <Sonner />
+          <CookieConsent />
+          <BrowserRouter
+            future={{
+              v7_startTransition: true,
+              v7_relativeSplatPath: true,
+            }}
+          >
+            <CanonicalLink />
+            <BreadcrumbSchema />
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/terms" element={<Terms />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:id" element={<BlogPost />} />
+              <Route path="/services/programming" element={<ServiceProgramming />} />
+              <Route path="/services/graphics" element={<ServiceGraphics />} />
+              <Route path="/services/content" element={<ServiceContent />} />
+              <Route path="/services/business" element={<ServiceBusiness />} />
+              <Route path="/services/:category/:id" element={<ServiceDetail />} />
+              <Route path="/maroc" element={<LocationMorocco />} />
+              <Route path="/espana" element={<LocationSpain />} />
+              <Route path="/saudi-arabia" element={<LocationSaudiArabia />} />
+              <Route path="/auth" element={<Auth />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+
+              {/* Admin Routes */}
+              <Route path="/admin" element={<AdminLayout />}>
+                <Route index element={<AdminDashboard />} />
+                <Route path="blog" element={<AdminBlogEditor />} />
+                <Route path="blog/generate" element={<SimpleBlogGenerator />} />
+                <Route path="blog/quick-generate" element={<QuickBlogGenerator />} />
+                <Route path="blog/auto-generate" element={<AutoBlogGenerator />} />
+                <Route path="analytics" element={<AdminAnalytics />} />
+                <Route path="seo" element={<AdminSEO />} />
+                <Route path="projects" element={<AdminProjects />} />
+                <Route path="clients" element={<AdminClients />} />
+                <Route path="services" element={<AdminServices />} />
+                <Route path="services/:id" element={<AdminServiceDetails />} />
+                <Route path="inquiries" element={<AdminInquiries />} />
+                <Route path="testimonials" element={<AdminTestimonials />} />
+                <Route path="api-keys" element={<AdminApiKeys />} />
+                <Route path="settings" element={<AdminSettings />} />
+                <Route path="revenue" element={<AdminRevenue />} />
+                <Route path="marketing" element={<AdminMarketing />} />
+                <Route path="email" element={<AdminEmail />} />
+              </Route>
+
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </ErrorBoundary>
+      </TooltipProvider>
+    </HelmetProvider>
   </QueryClientProvider>
 );
 

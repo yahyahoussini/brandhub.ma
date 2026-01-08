@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
@@ -28,13 +28,13 @@ const LocationSpain = () => {
                 <MapPin className="w-4 h-4 text-primary" />
                 <span className="text-sm font-medium">España</span>
               </div>
-              
+
               <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
                 Agencia de Desarrollo Web y Branding en España
               </h1>
-              
+
               <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-                Tu socio digital en España para desarrollo web, branding, diseño gráfico y marketing digital. 
+                Tu socio digital en España para desarrollo web, branding, diseño gráfico y marketing digital.
                 Acompañamos PYMES y grandes empresas en Madrid, Barcelona, Valencia y toda España en su transformación digital.
               </p>
 
@@ -74,7 +74,7 @@ const LocationSpain = () => {
                   </div>
                   <h3 className="text-xl font-bold mb-3">Desarrollo Web España</h3>
                   <p className="text-muted-foreground">
-                    Creación de sitios web profesionales, e-commerce y aplicaciones web a medida para empresas españolas. 
+                    Creación de sitios web profesionales, e-commerce y aplicaciones web a medida para empresas españolas.
                     Tecnologías modernas y SEO optimizado para el mercado español.
                   </p>
                 </CardContent>
@@ -87,7 +87,7 @@ const LocationSpain = () => {
                   </div>
                   <h3 className="text-xl font-bold mb-3">Branding & Diseño Gráfico</h3>
                   <p className="text-muted-foreground">
-                    Creación de identidad visual, diseño de logotipos, carta gráfica y soportes de marketing para marcas españolas. 
+                    Creación de identidad visual, diseño de logotipos, carta gráfica y soportes de marketing para marcas españolas.
                     Diseño que captura la esencia de tu empresa en España.
                   </p>
                 </CardContent>
@@ -100,7 +100,7 @@ const LocationSpain = () => {
                   </div>
                   <h3 className="text-xl font-bold mb-3">Marketing Digital España</h3>
                   <p className="text-muted-foreground">
-                    Estrategias SEO, publicidad Google Ads, gestión de redes sociales y content marketing para empresas en España. 
+                    Estrategias SEO, publicidad Google Ads, gestión de redes sociales y content marketing para empresas en España.
                     Aumenta tu visibilidad online en el mercado español.
                   </p>
                 </CardContent>
@@ -113,7 +113,7 @@ const LocationSpain = () => {
                   </div>
                   <h3 className="text-xl font-bold mb-3">Consultoría Estrategia Digital</h3>
                   <p className="text-muted-foreground">
-                    Acompañamiento estratégico para la transformación digital de tu empresa en España. 
+                    Acompañamiento estratégico para la transformación digital de tu empresa en España.
                     Análisis, auditoría y recomendaciones personalizadas.
                   </p>
                 </CardContent>
@@ -126,7 +126,7 @@ const LocationSpain = () => {
                   </div>
                   <h3 className="text-xl font-bold mb-3">E-commerce España</h3>
                   <p className="text-muted-foreground">
-                    Tiendas online completas con pasarela de pago segura adaptada al mercado español. 
+                    Tiendas online completas con pasarela de pago segura adaptada al mercado español.
                     Soluciones WooCommerce, Shopify y desarrollo a medida.
                   </p>
                 </CardContent>
@@ -139,7 +139,7 @@ const LocationSpain = () => {
                   </div>
                   <h3 className="text-xl font-bold mb-3">Aplicaciones Web & Móvil</h3>
                   <p className="text-muted-foreground">
-                    Desarrollo de aplicaciones web progresivas (PWA) y aplicaciones móviles para iOS y Android 
+                    Desarrollo de aplicaciones web progresivas (PWA) y aplicaciones móviles para iOS y Android
                     para empresas españolas.
                   </p>
                 </CardContent>
@@ -196,7 +196,7 @@ const LocationSpain = () => {
                       <div>
                         <h3 className="font-bold text-lg mb-2">Experiencia en el Mercado Español</h3>
                         <p className="text-muted-foreground">
-                          Conocimiento profundo del mercado español, comportamientos de consumidores y especificidades 
+                          Conocimiento profundo del mercado español, comportamientos de consumidores y especificidades
                           culturales para soluciones digitales adaptadas a empresas españolas.
                         </p>
                       </div>
@@ -209,7 +209,7 @@ const LocationSpain = () => {
                       <div>
                         <h3 className="font-bold text-lg mb-2">Tecnologías de Vanguardia</h3>
                         <p className="text-muted-foreground">
-                          Desarrollo web con las últimas tecnologías: React, Node.js, WordPress, Shopify. 
+                          Desarrollo web con las últimas tecnologías: React, Node.js, WordPress, Shopify.
                           Sitios web rápidos, seguros y optimizados para SEO en España.
                         </p>
                       </div>
@@ -222,7 +222,7 @@ const LocationSpain = () => {
                       <div>
                         <h3 className="font-bold text-lg mb-2">Soporte Dedicado</h3>
                         <p className="text-muted-foreground">
-                          Equipo disponible en español, soporte reactivo y acompañamiento continuo después de la entrega. 
+                          Equipo disponible en español, soporte reactivo y acompañamiento continuo después de la entrega.
                           Estamos aquí para tu éxito en España.
                         </p>
                       </div>
@@ -235,7 +235,7 @@ const LocationSpain = () => {
                       <div>
                         <h3 className="font-bold text-lg mb-2">Precios Competitivos</h3>
                         <p className="text-muted-foreground">
-                          Precios transparentes y adaptados al mercado español. Excelente relación calidad-precio para servicios 
+                          Precios transparentes y adaptados al mercado español. Excelente relación calidad-precio para servicios
                           de desarrollo web y branding profesionales.
                         </p>
                       </div>
@@ -254,7 +254,7 @@ const LocationSpain = () => {
               <h2 className="text-3xl md:text-4xl font-bold mb-8">
                 Contacta con Nuestra Agencia en España
               </h2>
-              
+
               <div className="grid md:grid-cols-3 gap-6 mb-8">
                 <Card className="shadow-card">
                   <CardContent className="p-6 text-center">
@@ -280,9 +280,9 @@ const LocationSpain = () => {
                   <CardContent className="p-6 text-center">
                     <MapPin className="w-8 h-8 text-primary mx-auto mb-3" />
                     <h3 className="font-bold mb-2">WhatsApp</h3>
-                    <a 
-                      href="https://wa.me/212703026422?text=Hola%2C%20me%20gustar%C3%ADa%20hablar%20con%20ustedes%20sobre%20sus%20servicios%20en%20Espa%C3%B1a." 
-                      target="_blank" 
+                    <a
+                      href="https://wa.me/212703026422?text=Hola%2C%20me%20gustar%C3%ADa%20hablar%20con%20ustedes%20sobre%20sus%20servicios%20en%20Espa%C3%B1a."
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="text-muted-foreground hover:text-primary"
                     >
@@ -293,7 +293,7 @@ const LocationSpain = () => {
               </div>
 
               <p className="text-lg text-muted-foreground">
-                Agencia de desarrollo web y branding al servicio de empresas españolas desde hace varios años. 
+                Agencia de desarrollo web y branding al servicio de empresas españolas desde hace varios años.
                 Transforma tu presencia digital en España con nuestras soluciones profesionales.
               </p>
             </div>
